@@ -13,6 +13,7 @@
     "nuxt": "^3.7.0"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^3.0.0",
     "nuxt-simple-sitemap": "^3.2.6",
     "sass": "^1.66.1"
   }

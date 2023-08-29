@@ -14,6 +14,7 @@ $card-padding: .5rem;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter';
+  color: $normal-text;
 }
 
 html, body {

@@ -57,11 +57,11 @@ $card-padding: .5rem;
     .nav-image {
       height: 40px;
       width: 40px;
-      filter: grayscale(100%) brightness(200%);
+      // filter: grayscale(100%) brightness(200%);
       border: 1px solid $card-outline;
       border-radius: 12px;
       transition: .2s;
-      background-image: url('~/assets/icon.png');
+      background-image: url('/logo.png');
       background-position: 50% 50%;
       background-size: 100%;
       background-repeat: no-repeat;
@@ -72,11 +72,11 @@ $card-padding: .5rem;
       border: 1px solid transparent;
     }
 
-    /*.nav-image:focus {
-      background-size: 90%;
-      scale: 1;
-      border: 1px solid $card-outline;
-    }*/
+    // .nav-image:focus {
+    //   background-size: 90%;
+    //   scale: 1;
+    //   border: 1px solid $card-outline;
+    // }
 
     .nav-left-text {
       text-transform: uppercase;
