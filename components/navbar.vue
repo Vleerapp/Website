@@ -7,10 +7,14 @@
           Vleer
         </div>
       </div>
+      <div class="links">
+        <NuxtLink to="/" class="link Home">Home</NuxtLink>
+        <NuxtLink to="/about" class="link About">About</NuxtLink>
+        <NuxtLink to="/blog" class="link Blog">Blog</NuxtLink>
+        <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
+      </div>
       <div class="nav-right nav-content">
-        <NuxtLink href="about" class="link About">About</NuxtLink>
-        <NuxtLink href="wiki" class="link Wiki">Wiki</NuxtLink>
-        <NuxtLink href="download" class="link btn download">Download</NuxtLink>
+        <NuxtLink to="download" class="link btn download">Download</NuxtLink>
       </div>
     </div>
   </div>
@@ -39,7 +43,7 @@ $card-padding: .5rem;
   color: $normal-text;
 
   .navbar-inner {
-    max-width: 1060px;
+    max-width: 1200px;
     width: 100%;
     margin: 20px;
     margin-inline: 0;
@@ -52,6 +56,7 @@ $card-padding: .5rem;
     .nav-content {
       display: flex;
       align-items: center;
+      gap: 12px;
     }
 
     .nav-image {
@@ -83,7 +88,6 @@ $card-padding: .5rem;
       font-weight: 700;
       font-size: 20px;
       line-height: 2rem;
-      padding-left: 10px;
     }
 
     .link {
@@ -92,8 +96,26 @@ $card-padding: .5rem;
       font-size: 14px;
       line-height: 1.5rem;
       font-weight: 400;
+      cursor: pointer;
+    }
+
+    .links{
+      display: flex;
+      gap: 32px;
+    }
+
+    .download {
+      text-decoration: none;
+      color: $small-text;
+      font-size: 14px;
+      line-height: 1.5rem;
+      font-weight: 400;
       padding: 8px;
       padding-inline: 24px;
+      width: 116px;
+      height: 36px;
+      display: grid;
+      place-items: center;
       cursor: pointer;
     }
 
