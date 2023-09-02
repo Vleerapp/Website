@@ -15,6 +15,26 @@
       </div>
       <div class="nav-right nav-content">
         <NuxtLink to="/download" class="link btn download">Download</NuxtLink>
+        <svg class="hammenu" width="26px" height="26px" viewBox="0 0 24 24" version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g id="vuesaxoutlinemenu">
+            <path d="M24 0L24 0L24 24L0 24L0 0L24 0Z" id="vuesaxoutlinemenu" fill="none" stroke="none" />
+            <g id="vuesaxoutlinemenu">
+              <g id="menu">
+                <path
+                  d="M3 7.75C2.59 7.75 2.25 7.41 2.25 7C2.25 6.59 2.59 6.25 3 6.25L21 6.25C21.41 6.25 21.75 6.59 21.75 7C21.75 7.41 21.41 7.75 21 7.75L3 7.75Z"
+                  id="Vector" fill="#FFFFFF" stroke="none" />
+                <path
+                  d="M3 12.75C2.59 12.75 2.25 12.41 2.25 12C2.25 11.59 2.59 11.25 3 11.25L21 11.25C21.41 11.25 21.75 11.59 21.75 12C21.75 12.41 21.41 12.75 21 12.75L3 12.75Z"
+                  id="Vector" fill="#FFFFFF" stroke="none" />
+                <path
+                  d="M3 17.75C2.59 17.75 2.25 17.41 2.25 17C2.25 16.59 2.59 16.25 3 16.25L21 16.25C21.41 16.25 21.75 16.59 21.75 17C21.75 17.41 21.41 17.75 21 17.75L3 17.75Z"
+                  id="Vector" fill="#FFFFFF" stroke="none" />
+                <path d="M24 0L24 24L0 24L0 0L24 0Z" id="Vector" fill="none" fill-rule="evenodd" stroke="none" />
+              </g>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
@@ -125,6 +145,10 @@ $card-padding: .5rem;
       transition: all .3s;
     }
 
+    .hammenu {
+      display: none;
+    }
+
     .btn {
       background: #212121;
       border: 1px solid $card-outline;
@@ -136,4 +160,15 @@ $card-padding: .5rem;
     }
   }
 }
-</style>
+
+@media (max-width: 700px) {
+
+  .links,
+  .download {
+    display: none !important;
+  }
+
+  .hammenu {
+    display: block !important;
+  }
+}</style>

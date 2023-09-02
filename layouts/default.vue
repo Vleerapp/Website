@@ -9,6 +9,8 @@
 .content{
   justify-content: center;
   display: flex;
-  margin-top: 180px;
+  margin-top: 260px;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

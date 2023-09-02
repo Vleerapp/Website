@@ -26,4 +26,8 @@ $card-padding: .5rem;
 html, body {
   background-color: $background;
 }
+
+a{
+  text-decoration: none;
+}
 </style>
