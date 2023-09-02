@@ -17,6 +17,12 @@ $card-padding: .5rem;
   color: $normal-text;
 }
 
+@font-face {
+  font-family: Inter;
+  src: url("/Inter.woff2") format("woff2");
+  font-display: swap;
+}
+
 html, body {
   background-color: $background;
 }

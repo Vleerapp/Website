@@ -77,12 +77,6 @@ $card-padding: .5rem;
       border: 1px solid transparent;
     }
 
-    // .nav-image:focus {
-    //   background-size: 90%;
-    //   scale: 1;
-    //   border: 1px solid $card-outline;
-    // }
-
     .nav-left-text {
       text-transform: uppercase;
       font-weight: 700;
@@ -97,9 +91,15 @@ $card-padding: .5rem;
       line-height: 1.5rem;
       font-weight: 400;
       cursor: pointer;
+      transition: all .3s;
     }
 
-    .links{
+    .link:hover {
+      color: white;
+      transition: all .3s;
+    }
+
+    .links {
       display: flex;
       gap: 32px;
     }
@@ -117,6 +117,12 @@ $card-padding: .5rem;
       display: grid;
       place-items: center;
       cursor: pointer;
+      transition: all .3s;
+    }
+
+    .download:hover {
+      background-color: #2c2c2c;
+      transition: all .3s;
     }
 
     .btn {
