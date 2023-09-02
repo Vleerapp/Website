@@ -9,7 +9,7 @@
 .content{
   justify-content: center;
   display: flex;
-  margin-top: 260px;
+  margin-top: 80px;
   flex-direction: column;
   align-items: center;
 }
