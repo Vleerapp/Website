@@ -14,7 +14,7 @@
         <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
       </div>
       <div class="nav-right nav-content">
-        <NuxtLink to="download" class="link btn download">Download</NuxtLink>
+        <NuxtLink to="/download" class="link btn download">Download</NuxtLink>
       </div>
     </div>
   </div>
