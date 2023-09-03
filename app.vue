@@ -23,6 +23,12 @@ $card-padding: .5rem;
   font-display: swap;
 }
 
+@font-face {
+  font-family: Maax;
+  src: url("/Maax.woff") format("woff");
+  font-display: swap;
+}
+
 html, body {
   background-color: $background;
 }
