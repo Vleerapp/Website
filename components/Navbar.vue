@@ -10,13 +10,13 @@
       <div class="links">
         <NuxtLink to="/" class="link Home">Home</NuxtLink>
         <NuxtLink to="/about" class="link About">About</NuxtLink>
-        <NuxtLink to="/blog" class="link Blog">Blog</NuxtLink>
+        <a href="https://github.com/vleerapp/vleer/issues" class="link Issues" target="_blank">Issues</a>
         <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
       </div>
       <div v-if="isMenuOpen" class="hamburger-menu">
         <NuxtLink to="/" class="ham-link Home">Home</NuxtLink>
         <NuxtLink to="/about" class="ham-link About">About</NuxtLink>
-        <NuxtLink to="/blog" class="ham-link Blog">Blog</NuxtLink>
+        <a href="https://github.com/vleerapp/vleer/issues" class="link Issues" target="_blank">Issues</a>
         <NuxtLink to="/contact" class="ham-link Contact">Contact</NuxtLink>
       </div>
       <div class="nav-right nav-content">
@@ -109,6 +109,7 @@ $card-padding: .5rem;
   justify-content: center;
   backdrop-filter: blur(40px);
   color: $normal-text;
+  z-index: 1000;
 
   .navbar-inner {
     max-width: 1200px;
@@ -134,7 +135,7 @@ $card-padding: .5rem;
       border: 1px solid $card-outline;
       border-radius: 12px;
       transition: .2s;
-      background-image: url('/logo.png');
+      background-image: url('/app logo.webp');
       background-position: 50% 50%;
       background-size: 100%;
       background-repeat: no-repeat;
