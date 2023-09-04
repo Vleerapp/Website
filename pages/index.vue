@@ -6,11 +6,34 @@
         fingertips</h2>
       <Download />
     </div>
-    <div class="img-border">
-        <img src="/hero.png" alt="" class="hero-image">
-      </div>
+    <div class="hero-img-container">
+      <img :style="{ 'border-radius': borderRadius }" src="/hero.png" alt="" id="hero-image" class="hero-image">
+    </div>
   </NuxtLayout>
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      borderRadius: "22px"
+    }
+  },
+  methods: {
+    updateBorderRadius() {
+      const heroImage = document.getElementById("hero-image") as HTMLImageElement;
+      this.borderRadius = (heroImage.offsetWidth * 0.02) + 'px';
+    }
+  },
+  mounted() {
+    this.updateBorderRadius();
+    window.addEventListener('resize', this.updateBorderRadius);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateBorderRadius);
+  }
+}
+</script>
 
 <style lang="scss">
 .title {
@@ -41,26 +64,26 @@
   padding-top: 180px;
 }
 
-.hero-image{
+.hero-image {
   max-width: 1185px;
   height: auto;
   width: 100%;
+  outline: 1px solid #544d5e6b;
+  outline-offset: 8px;
+  border-radius: 22px;
 }
 
-.img-border{
-  padding: 8px;
-  border: 1px solid #544d5e6b;
-  border-radius: 30px;
+.hero-img-container {
   margin-inline: 32px;
 }
 
 @media (max-width: 700px) {
-  .title{
+  .title {
     font-size: 48px;
     line-height: 50px;
   }
 
-  .hero{
+  .hero {
     padding-top: 80px;
   }
 }
