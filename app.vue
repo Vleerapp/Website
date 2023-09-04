@@ -25,6 +25,12 @@ $card-padding: .5rem;
 
 @font-face {
   font-family: Maax;
+  src: url("/Maax-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Maax-Regular;
   src: url("/Maax.woff") format("woff");
   font-display: swap;
 }
