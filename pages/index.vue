@@ -12,19 +12,21 @@
     <div class="cards">
       <h1 class="cards-text">Superchare your experience with the features of Vleer</h1>
       <div class="card-grid">
-        <div class="text">A</div>
-      </div>
-      <div class="card-grid">
-        <div class="text">B</div>
-      </div>
-      <div class="card-grid">
-        <div class="text">C</div>
-      </div>
-      <div class="card-grid">
-        <div class="text">D</div>
-      </div>
-      <div class="card-grid">
-        <div class="text">E</div>
+        <div class="card">
+          <div class="text">Full Control</div>
+        </div>
+        <div class="card">
+          <div class="text">Thank you for choosing us</div>
+        </div>
+        <div class="card">
+          <div class="text">Offline</div>
+        </div>
+        <div class="card">
+          <div class="text">All formats</div>
+        </div>
+        <div class="card">
+          <div class="text">Search</div>
+        </div>
       </div>
     </div>
   </NuxtLayout>
@@ -86,16 +88,63 @@
     max-width: 900px;
     text-align: center;
     font-size: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
 
-  .cards-grid {
+  .card-grid {
     width: 1200px;
     height: 572px;
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(384px, 2);
-    grid-template-rows: repeat(274px, 3);
+    grid-template-rows: 274px 274px;
+    grid-template-columns: 384px 384px 384px;
+    place-items: center;
+
+    .card {
+      outline: 1px solid #544d5e6b;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      font-size: 30px;
+
+      .text {
+        /* margin-left: -40px;
+        margin-top: -40px; */
+        max-width: 80%;
+      }
+
+      &:nth-child(1) {
+        background-image: url('card1.png');
+      }
+
+      &:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        background-image: url('card3.png');
+        font-size: 45px;
+        text-align: center;
+
+        .text {
+          margin-left: 0px;
+          margin-top: 0px;
+          max-width: 80%;
+        }
+      }
+
+      &:nth-child(3) {
+        background-image: url('card4.png');
+      }
+
+      &:nth-child(4) {
+        background-image: url('card2.png');
+      }
+
+      &:nth-child(5) {
+        background-image: url('card5.png');
+      }
+    }
   }
 }
 
@@ -116,7 +165,7 @@
   }
 
   .hero-img-container {
-    margin-inline: 0px;
+    margin-inline: 20px;
   }
 
   .hero-image {
@@ -124,8 +173,8 @@
     height: auto;
     width: 100%;
     outline: 1px solid #544d5e6b;
-    outline-offset: 8px;
-    border-radius: 0px;
+    outline-offset: 6px;
+    border-radius: 10px;
   }
 }
 </style>
