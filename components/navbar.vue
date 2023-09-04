@@ -46,35 +46,30 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-
-const isMenuOpen = ref(false);
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-
-onMounted(() => {
-  // Add event listener to close the menu when a click occurs outside the menu
-  document.addEventListener('click', handleClickOutside);
-});
-
-onUnmounted(() => {
-  // Remove event listener when the component is unmounted
-  document.removeEventListener('click', handleClickOutside);
-});
-
-const handleClickOutside = (event) => {
-  const menu = document.querySelector('.hamburger-menu');
-  if (menu && !menu.contains(event.target)) {
-    closeMenu();
+<script lang="ts">
+export default{
+  data(){
+    return {
+      isMenuOpen: false,
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    }
+  },
+  mounted(){
+    document.addEventListener('click', (event) => {
+      if (this.isMenuOpen = true) {
+        console.log("true")
+        // const menu = document.querySelector('.hamburger-menu');
+        // if (menu && !menu.contains(event.target as Node) && this.isMenuOpen) {
+        //   this.isMenuOpen = false;
+        // }
+      }
+    });
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
