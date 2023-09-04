@@ -7,8 +7,9 @@
       <Download />
     </div>
     <div class="hero-img-container">
-      <img :style="{ 'border-radius': borderRadius }" src="/hero.png" alt="" id="hero-image" class="hero-image">
+      <img :style="{ 'border-radius': borderRadius }" src="/hero.webp" alt="" id="hero-image" class="hero-image">
     </div>
+    <Ready/>
   </NuxtLayout>
 </template>
 
@@ -60,7 +61,6 @@ export default {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  margin-inline: 32px;
   padding-top: 180px;
 }
 
@@ -71,10 +71,11 @@ export default {
   outline: 1px solid #544d5e6b;
   outline-offset: 8px;
   border-radius: 22px;
+  opacity: 75%;
 }
 
 .hero-img-container {
-  margin-inline: 40px;
+  margin-inline: 8px;
 }
 
 @media (max-width: 700px) {
