@@ -6,7 +6,9 @@
         fingertips</h2>
       <Download />
     </div>
-    <img src="/hero.svg" alt="" class="hero-image">
+    <div class="img-border">
+        <img src="/hero.png" alt="" class="hero-image">
+      </div>
   </NuxtLayout>
 </template>
 
@@ -39,11 +41,17 @@
   padding-top: 180px;
 }
 
-.hero-image {
+.hero-image{
   max-width: 1185px;
   height: auto;
   width: 100%;
-  padding-inline: 32px;
+}
+
+.img-border{
+  padding: 8px;
+  border: 1px solid #544d5e6b;
+  border-radius: 30px;
+  margin-inline: 32px;
 }
 
 @media (max-width: 700px) {
