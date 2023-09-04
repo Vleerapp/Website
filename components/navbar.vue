@@ -106,7 +106,7 @@ $card-padding: .5rem;
 
 .navbar {
   height: 80px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
