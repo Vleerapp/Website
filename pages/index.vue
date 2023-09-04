@@ -116,13 +116,13 @@
       }
 
       &:nth-child(1) {
-        background-image: url('card1.png');
+        background-image: url('/card1.png');
       }
 
       &:nth-child(2) {
         grid-column: 2 / 3;
         grid-row: 1 / 3;
-        background-image: url('card3.png');
+        background-image: url('/card3.png');
         font-size: 45px;
         text-align: center;
 
@@ -134,15 +134,15 @@
       }
 
       &:nth-child(3) {
-        background-image: url('card4.png');
+        background-image: url('/card4.png');
       }
 
       &:nth-child(4) {
-        background-image: url('card2.png');
+        background-image: url('/card2.png');
       }
 
       &:nth-child(5) {
-        background-image: url('card5.png');
+        background-image: url('/card5.png');
       }
     }
   }
