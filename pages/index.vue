@@ -9,6 +9,24 @@
     <div class="hero-img-container">
       <img src="/hero.png" alt="" id="hero-image" class="hero-image">
     </div>
+    <div class="cards">
+      <h1 class="cards-text">Superchare your experience with the features of Vleer</h1>
+      <div class="card-grid">
+        <div class="text">A</div>
+      </div>
+      <div class="card-grid">
+        <div class="text">B</div>
+      </div>
+      <div class="card-grid">
+        <div class="text">C</div>
+      </div>
+      <div class="card-grid">
+        <div class="text">D</div>
+      </div>
+      <div class="card-grid">
+        <div class="text">E</div>
+      </div>
+    </div>
   </NuxtLayout>
 </template>
 
@@ -52,6 +70,39 @@
 
 .hero-img-container {
   margin-inline: 40px;
+}
+
+.cards {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  max-width: 1185px;
+  height: auto;
+  width: 100%;
+  border-radius: 22px;
+  display: grid;
+  justify-items: center;
+
+  .cards-text {
+    max-width: 900px;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+
+  .cards-grid {
+    width: 1200px;
+    height: 572px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(384px, 2);
+    grid-template-rows: repeat(274px, 3);
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-image {
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 700px) {
