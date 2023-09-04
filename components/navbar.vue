@@ -13,10 +13,16 @@
         <NuxtLink to="/blog" class="link Blog">Blog</NuxtLink>
         <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
       </div>
+      <div v-if="isMenuOpen" class="hamburger-menu">
+        <NuxtLink to="/" class="ham-link Home">Home</NuxtLink>
+        <NuxtLink to="/about" class="ham-link About">About</NuxtLink>
+        <NuxtLink to="/blog" class="ham-link Blog">Blog</NuxtLink>
+        <NuxtLink to="/contact" class="ham-link Contact">Contact</NuxtLink>
+      </div>
       <div class="nav-right nav-content">
         <NuxtLink to="/download" class="link btn download">Download</NuxtLink>
         <svg class="hammenu" width="26px" height="26px" viewBox="0 0 24 24" version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" @click="toggleMenu">
           <g id="vuesaxoutlinemenu">
             <path d="M24 0L24 0L24 24L0 24L0 0L24 0Z" id="vuesaxoutlinemenu" fill="none" stroke="none" />
             <g id="vuesaxoutlinemenu">
@@ -41,7 +47,34 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+
+onMounted(() => {
+  // Add event listener to close the menu when a click occurs outside the menu
+  document.addEventListener('click', handleClickOutside);
+});
+
+onUnmounted(() => {
+  // Remove event listener when the component is unmounted
+  document.removeEventListener('click', handleClickOutside);
+});
+
+const handleClickOutside = (event) => {
+  const menu = document.querySelector('.hamburger-menu');
+  if (menu && !menu.contains(event.target)) {
+    closeMenu();
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -50,6 +83,26 @@ $small-text: #ababab;
 $normal-text: #ffffff;
 $card-outline: rgb(255 255 255 / .1);
 $card-padding: .5rem;
+
+.hamburger-menu {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  filter: none !important;
+  width: 100%;
+  padding: 80px;
+  padding-right: 32px;
+  z-index: 10000;
+  flex-direction: column;
+  gap: 16px;
+  text-align: right;
+}
 
 .navbar {
   height: 80px;
@@ -67,7 +120,7 @@ $card-padding: .5rem;
     width: 100%;
     margin: 20px;
     margin-inline: 0;
-    padding-inline: 30px;
+    padding-inline: 32px;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -147,6 +200,7 @@ $card-padding: .5rem;
 
     .hammenu {
       display: none;
+      z-index: 10001;
     }
 
     .btn {
@@ -171,4 +225,5 @@ $card-padding: .5rem;
   .hammenu {
     display: block !important;
   }
-}</style>
+}
+</style>
