@@ -7,33 +7,10 @@
       <Download />
     </div>
     <div class="hero-img-container">
-      <img :style="{ 'border-radius': borderRadius }" src="/hero.png" alt="" id="hero-image" class="hero-image">
+      <img src="/hero.png" alt="" id="hero-image" class="hero-image">
     </div>
   </NuxtLayout>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      borderRadius: "22px"
-    }
-  },
-  methods: {
-    updateBorderRadius() {
-      const heroImage = document.getElementById("hero-image") as HTMLImageElement;
-      this.borderRadius = (heroImage.offsetWidth * 0.02) + 'px';
-    }
-  },
-  mounted() {
-    this.updateBorderRadius();
-    window.addEventListener('resize', this.updateBorderRadius);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.updateBorderRadius);
-  }
-}
-</script>
 
 <style lang="scss">
 .title {
@@ -85,6 +62,19 @@ export default {
 
   .hero {
     padding-top: 80px;
+  }
+
+  .hero-img-container {
+    margin-inline: 0px;
+  }
+
+  .hero-image {
+    max-width: 1185px;
+    height: auto;
+    width: 100%;
+    outline: 1px solid #544d5e6b;
+    outline-offset: 8px;
+    border-radius: 0px;
   }
 }
 </style>
