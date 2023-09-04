@@ -196,6 +196,7 @@ $card-padding: .5rem;
     .hammenu {
       display: none;
       z-index: 10001;
+      cursor: pointer;
     }
 
     .btn {
