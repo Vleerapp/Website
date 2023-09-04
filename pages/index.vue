@@ -74,7 +74,7 @@ export default {
 }
 
 .hero-img-container {
-  margin-inline: 32px;
+  margin-inline: 40px;
 }
 
 @media (max-width: 700px) {
