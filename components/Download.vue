@@ -9,10 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
-
 let rotation = 0;
-let animationId = null;
+let animationId: any = null;
 
 const startAnimation = async () => {
   while (true) {
