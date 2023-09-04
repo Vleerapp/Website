@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <Navbar />
-  </div>
+  <NuxtLayout>
+
+  </NuxtLayout>
 </template>
 
-<script lang="ts" setup>
-
-</script>
-
-
-
-<style></style>
+<style lang="scss"></style>
