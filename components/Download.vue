@@ -1,7 +1,6 @@
 <template>
   <nuxt-link to="/download">
     <div id="button-outter" class="button-outter">
-      <canvas id="particle-canvas" class="particle-canvas"></canvas>
       <div class="button-inner">
         Download
       </div>
@@ -10,68 +9,25 @@
 </template>
 
 <script setup lang="ts">
-var rotation = 0
+import { onMounted, onUnmounted, ref } from 'vue';
 
+let rotation = 0;
+let animationId = null;
 
-onMounted(async () => {
-  // lightingParticels()
+const startAnimation = async () => {
   while (true) {
     document.documentElement.style.setProperty("--rotation", rotation + "deg")
     rotation += 1;
-    await new Promise(resolve => setTimeout(resolve, 7))
+    await new Promise(resolve => animationId = setTimeout(resolve, 7))
     if (rotation >= 360) rotation = 0
   }
-})
-
-///////////
-
-function lightingParticels() {
-  const canvas = document.getElementById("particle-canvas");
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-
-  const particleCount = 5;
-  const particles = [];
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: 1,
-      vx: Math.random() * 0.15 - 0.045,
-      vy: Math.random() * 0.15 - 0.045,
-      opacity: 1,
-    });
-  }
-
-  function updateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0) p.x = canvas.width;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y > canvas.height) p.y = 0;
-
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.closePath();
-      ctx.fill();
-    }
-
-    requestAnimationFrame(updateParticles);
-  }
-
-  updateParticles();
 }
+
+onMounted(startAnimation)
+
+onUnmounted(() => {
+  clearTimeout(animationId);
+})
 </script>
 
 <style lang="scss">
@@ -97,7 +53,7 @@ function lightingParticels() {
   place-items: center;
 }
 
-.particle-canvas{
+.particle-canvas {
   width: 100%;
   height: 100%;
   z-index: 100;
