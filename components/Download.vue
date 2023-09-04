@@ -12,12 +12,12 @@
 <script setup lang="ts">
 var rotation = 0
 
-
 onMounted(async () => {
   // lightingParticels()
   while (true) {
-    document.documentElement.style.setProperty("--rotation", rotation + "deg")
+    rotation = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--rotation').trim().replace('deg', ''));
     rotation += 1;
+    document.documentElement.style.setProperty("--rotation", rotation + "deg")
     await new Promise(resolve => setTimeout(resolve, 7))
     if (rotation >= 360) rotation = 0
   }
