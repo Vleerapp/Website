@@ -58,17 +58,17 @@ export default{
       this.isMenuOpen = !this.isMenuOpen
     }
   },
-  mounted(){
-    document.addEventListener('click', (event) => {
-      if (this.isMenuOpen = true) {
-        console.log("true")
-        // const menu = document.querySelector('.hamburger-menu');
-        // if (menu && !menu.contains(event.target as Node) && this.isMenuOpen) {
-        //   this.isMenuOpen = false;
-        // }
-      }
-    });
-  }
+  // mounted(){
+  //   document.addEventListener('click', (event) => {
+  //     if (this.isMenuOpen = true) {
+  //       console.log("true")
+  //       // const menu = document.querySelector('.hamburger-menu');
+  //       // if (menu && !menu.contains(event.target as Node) && this.isMenuOpen) {
+  //       //   this.isMenuOpen = false;
+  //       // }
+  //     }
+  //   });
+  // }
 }
 </script>
 
