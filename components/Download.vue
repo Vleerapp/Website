@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-let rotation = 0;
+let rotation = 90;
 let animationId: any = null;
 
 const startAnimation = async () => {
@@ -30,7 +30,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 :root {
-  --rotatio: 0deg;
+  --rotation: 90deg;
 }
 
 .button-outter {
@@ -49,12 +49,5 @@ onUnmounted(() => {
   border-radius: 11px;
   display: grid;
   place-items: center;
-}
-
-.particle-canvas {
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  position: absolute;
 }
 </style>
