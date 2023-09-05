@@ -12,6 +12,6 @@
   margin-top: 80px;
   flex-direction: column;
   align-items: center;
-  margin-inline: 32px;
+  margin-inline: 24px;
 }
 </style>

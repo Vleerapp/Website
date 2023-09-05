@@ -116,7 +116,7 @@ $card-padding: .5rem;
     width: 100%;
     margin: 20px;
     margin-inline: 0;
-    padding-inline: 32px;
+    padding-inline: 24px;
     height: 40px;
     display: flex;
     justify-content: space-between;
