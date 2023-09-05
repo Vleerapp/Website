@@ -1,20 +1,24 @@
 <template>
   <NuxtLayout>
     <div class="download-content">
-      <img src="/logo.webp" alt="" class="logo">
+      <div class="logo-container">
+        <img src="/logo.webp" alt="" class="logo">
+      </div>
       <div class="inner-content">
         <h1 class="download-title">Download our App</h1>
         <h2 class="download-description">Lighting fast Desktop experience on all platforms</h2>
         <a href="">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
-              <img class="button-inner-logo" src="/apple.svg" alt="">
+              <img v-if="mac" class="button-inner-logo" src="/apple.svg" alt="">
+              <img v-if="win" class="button-inner-logo" src="/windows.svg" alt="">
               Download
             </div>
           </div>
         </a>
       </div>
-      <p class="tag">Compatible with Apple Silicon and Intel</p>
+      <p v-if="mac" class="tag">Compatible with Apple Silicon and Intel</p>
+      <p v-if="win" class="tag">Compatible with Windwos 11/10</p>
     </div>
   </NuxtLayout>
 </template>
@@ -37,6 +41,29 @@ onMounted(startAnimation)
 onUnmounted(() => {
   clearTimeout(animationId);
 })
+</script>
+
+<script lang="ts">
+export default{
+  data() {
+    return{
+      mac: false,
+      win: true
+    }
+  },
+  mounted() {
+    var platform = navigator.platform;
+    console.log(platform.toLowerCase())
+    if (platform.toLowerCase().includes("mac")) {
+      this.mac = true
+      this.win = false
+    }
+    if (platform.toLowerCase().includes("win")) {
+      this.win = true
+      this.mac = false
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -82,12 +109,17 @@ onUnmounted(() => {
   align-items: center;
   text-align: center;
   width: 100%;
+  height: 523px;
+
+  .logo-container{
+    height: 260px;
+    margin-bottom: 48px;
+  }
 
   .logo {
     max-width: 260px;
     height: auto;
     border-radius: 260px;
-    margin-bottom: 48px;
   }
 
   .inner-content {
