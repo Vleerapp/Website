@@ -2,11 +2,11 @@
   <NuxtLayout>
     <div class="hero">
       <h1 class="title">Enjoy music again with Vleer</h1>
-      <h2 class="description">Discover a redefined way of listeing to music, all conveniently accessible right at your
+      <h2 class="description">Discover a redefined way of listing to music, all conveniently accessible right at your
         fingertips</h2>
       <Download />
     </div>
-    <div class="hero-img-container">
+    <div id="hero-img-container" class="hero-img-container">
       <img src="/hero.webp" alt="" id="hero-image" class="hero-image">
     </div>
     <div class="cards">
@@ -29,9 +29,28 @@
         </div>
       </div>
     </div>
-    <Ready/>
+    <Ready />
   </NuxtLayout>
 </template>
+
+<script lang="ts">
+export default {
+  methods: {
+    updateHeight() {
+      var image_container = document.getElementById("hero-img-container") as HTMLElement;
+
+      if(document.body.offsetWidth <= 1200){
+        image_container.style.height = (46 / 79) * (document.body.offsetWidth - 64) + "px";
+      } else{
+        image_container.style.height = "auto";
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.updateHeight);
+  }
+}
+</script>
 
 <style lang="scss">
 .title {
@@ -77,8 +96,7 @@
 
 .cards {
   padding-top: 180px;
-  padding-bottom: 180px;
-  max-width: 1185px;
+  max-width: 1200px;
   height: auto;
   width: 100%;
   border-radius: 22px;
@@ -165,15 +183,7 @@
     padding-top: 80px;
   }
 
-  .hero-img-container {
-    margin-inline: 20px;
-  }
-
   .hero-image {
-    max-width: 1185px;
-    height: auto;
-    width: 100%;
-    outline: 1px solid #544d5e6b;
     outline-offset: 6px;
     border-radius: 10px;
   }
