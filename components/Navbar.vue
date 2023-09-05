@@ -16,7 +16,7 @@
       <div v-if="isMenuOpen" class="hamburger-menu">
         <NuxtLink to="/" class="ham-link Home">Home</NuxtLink>
         <NuxtLink to="/about" class="ham-link About">About</NuxtLink>
-        <a href="https://github.com/vleerapp/vleer/issues" class="link Issues" target="_blank">Issues</a>
+        <a href="https://github.com/vleerapp/vleer/issues" class="ham-link Issues" target="_blank">Issues</a>
         <NuxtLink to="/contact" class="ham-link Contact">Contact</NuxtLink>
       </div>
       <div class="nav-right nav-content">
