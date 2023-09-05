@@ -15,6 +15,7 @@
   gap: 24px;
   margin: calc((100vh - 270px) / 4);
   margin-inline: 0;
+  text-align: center;
 
   .app-logo{
     width: 120px;
