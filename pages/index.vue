@@ -107,7 +107,7 @@
       height: 100%;
       display: grid;
       place-items: center;
-      border-radius: 12px;
+      border-radius: 24px;
       font-size: 30px;
 
       .text {
@@ -117,13 +117,13 @@
       }
 
       &:nth-child(1) {
-        background-image: url('/card1.png');
+        background-image: url('/card1.webp');
       }
 
       &:nth-child(2) {
         grid-column: 2 / 3;
         grid-row: 1 / 3;
-        background-image: url('/card3.png');
+        background-image: url('/card3.webp');
         font-size: 45px;
         text-align: center;
 
@@ -135,15 +135,15 @@
       }
 
       &:nth-child(3) {
-        background-image: url('/card4.png');
+        background-image: url('/card4.webp');
       }
 
       &:nth-child(4) {
-        background-image: url('/card2.png');
+        background-image: url('/card2.webp');
       }
 
       &:nth-child(5) {
-        background-image: url('/card5.png');
+        background-image: url('/card5.webp');
       }
     }
   }
