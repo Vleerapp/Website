@@ -135,7 +135,7 @@ $card-padding: .5rem;
       border: 1px solid $card-outline;
       border-radius: 12px;
       transition: .2s;
-      background-image: url('/app logo.webp');
+      background-image: url('/app-logo.webp');
       background-position: 50% 50%;
       background-size: 100%;
       background-repeat: no-repeat;

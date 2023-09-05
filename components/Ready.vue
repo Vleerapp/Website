@@ -1,6 +1,6 @@
 <template>
   <div class="ready">
-    <img src="/app logo big.webp" alt="" class="app-logo">
+    <img src="/app-logo-big.webp" alt="" class="app-logo">
     <h1 class="ready-title">Ready to take off?</h1>
     <Download/>
   </div>
