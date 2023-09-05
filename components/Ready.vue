@@ -1,6 +1,8 @@
 <template>
   <div class="ready">
-    <img src="/app-logo-big.webp" alt="" class="app-logo">
+    <div class="ready-image-container">
+      <img src="/app-logo-big.webp" alt="" class="app-logo">
+    </div>
     <h1 class="ready-title">Ready to take off?</h1>
     <Download/>
   </div>
@@ -16,6 +18,10 @@
   margin: calc((100vh - 270px) / 4);
   margin-inline: 0;
   text-align: center;
+
+  .ready-image-container{
+    height: 120px;
+  }
 
   .app-logo{
     width: 120px;
