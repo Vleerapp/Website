@@ -7,7 +7,7 @@
       <Download />
     </div>
     <div class="hero-img-container">
-      <img src="/hero.png" alt="" id="hero-image" class="hero-image">
+      <img src="/hero.webp" alt="" id="hero-image" class="hero-image">
     </div>
     <div class="cards">
       <h1 class="cards-text">Superchare your experience with the features of Vleer</h1>
