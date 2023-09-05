@@ -7,9 +7,9 @@
       <Download />
     </div>
     <div id="hero-img-container" class="hero-img-container">
-      <img src="/hero.webp" alt="" id="hero-image" class="hero-image">
+      <img :style="{ 'height': height + 'px', 'width': width + 'px' }" src="/hero.webp" alt="" id="hero-image" class="hero-image">
     </div>
-    <div class="cards">
+    <!-- <div class="cards">
       <h1 class="cards-text">Superchare your experience with the features of Vleer</h1>
       <div class="card-grid">
         <div class="card">
@@ -28,25 +28,38 @@
           <div class="text">Search</div>
         </div>
       </div>
-    </div>
+    </div> -->
     <Ready />
   </NuxtLayout>
 </template>
 
 <script lang="ts">
 export default {
+  data() {
+    return{
+      height: (46 / 79) * (document.body.offsetWidth - 64),
+      width: document.body.offsetWidth - 64
+    }
+  },
   methods: {
     updateHeight() {
-      var image_container = document.getElementById("hero-img-container") as HTMLElement;
-
       if(document.body.offsetWidth <= 1200){
-        image_container.style.height = (46 / 79) * (document.body.offsetWidth - 64) + "px";
+        this.height = (46 / 79) * (document.body.offsetWidth - 64);
+        this.width = document.body.offsetWidth - 64
       } else{
-        image_container.style.height = "auto";
+        this.height = 690;
+        this.width = 1185
       }
     }
   },
   mounted() {
+    if (document.body.offsetWidth <= 1200) {
+      this.height = (46 / 79) * (document.body.offsetWidth - 64);
+      this.width = document.body.offsetWidth - 64
+    } else {
+      this.height = 690;
+      this.width = 1185
+    }
     window.addEventListener('resize', this.updateHeight);
   }
 }
