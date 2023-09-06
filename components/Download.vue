@@ -15,8 +15,8 @@ let animationId: any = null;
 const startAnimation = async () => {
   while (true) {
     document.documentElement.style.setProperty("--rotation", rotation + "deg")
-    rotation += 2;
-    await new Promise(resolve => animationId = setTimeout(resolve, 16))
+    rotation += 1;
+    await new Promise(resolve => animationId = setTimeout(resolve, 7))
     if (rotation >= 360) rotation = 0
   }
 }
