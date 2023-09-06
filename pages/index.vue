@@ -100,7 +100,6 @@ export default {
   outline: 1px solid #544d5e6b;
   outline-offset: 8px;
   border-radius: 22px;
-  opacity: 75%;
 }
 
 .hero-img-container {
