@@ -3,18 +3,40 @@
     <div class="about-container">
       <div class="about">
         <h1 class="about-title">The Story of Vleer</h1>
-        <p class="text">Vleer was originally planned to just be a simple music app that can play music without having to pay for those Music subcriptions. But eventually it turned into a public project that we now build with your help to create a redefined way of how we listen to Music.<br><br>The direction of Vleer turned around by 180° and now we are here thogeter as the two founders of Vleer PandaDEV and Waradu.<br><br>The idea for Vleer or as we called it at the beginnning "Music Player" was from PandaDEV as he didn't like all the other Music apps as they are complicated to use and the main reason cost money which was a problem for him. So he decided to create one by himself that will work with the intention to be simple and free. Waradu the co-founder helped him because together it always works better.<br><br>Also in the main focus was that the app should be Open Source to create transparency and gain trust.</p>
+        <p class="text">Once upon a time, in the world of digital tunes and streaming melodies, two friends embarked on a
+          mission. PandaDEV and Waradu had a simple dream – to create an uncomplicated music app that wouldn't break the
+          bank. You see, PandaDEV was tired of wrestling with complicated music apps that demanded hard-earned money.
+          <br><br>
+          One day, PandaDEV decided to take matters into his own hands. He wanted to craft a music player that was easy to
+          use and, more importantly, free. His trusty partner, Waradu, joined the cause, and together they set out on an
+          unexpected journey.
+          <br><br>
+          Building Vleer was no walk in the park, but their unwavering determination attracted a community of like-minded
+          individuals. Strangers and friends joined hands to redefine how we all experience music.
+          <br><br>
+          As Vleer's direction shifted dramatically, it became more than just an app; it became a movement. PandaDEV and
+          Waradu found themselves at the helm of an extraordinary endeavor. With each line of code, every bit of feedback,
+          and shared ideas, Vleer transformed into something they could have never anticipated.
+          <br><br>
+          Their mission remained clear: simplicity and accessibility for everyone. Vleer would be open-source, a symbol of
+          transparency and trust. It would be a haven for music enthusiasts, a place where the joy of sound knew no
+          limits.
+          <br><br>
+          And so, here we are, united by Vleer, bonded by our love for music and the dream of a simpler way to experience
+          it. As we journey forward, let the melodies guide us, and let the story of Vleer inspire us to create something
+          beautiful together.
+        </p>
       </div>
     </div>
-    <Ready />
   </NuxtLayout>
 </template>
 
 <style lang="scss">
-.about-container{
+.about-container {
   max-width: 1136px;
   width: 100%;
   margin-top: 80px;
+  margin-bottom: 32px;
 
   .about {
     display: flex;
@@ -23,8 +45,8 @@
     justify-content: left;
     flex-direction: column;
     gap: 16px;
-  
-    .text{
+
+    .text {
       color: #bfbfbf;
     }
 
@@ -32,6 +54,12 @@
       font-size: 48px;
       text-align: left;
     }
+  }
+}
+
+@media (max-width: 700px) {
+  .about-container{
+    margin-top: 40px;
   }
 }
 </style>
