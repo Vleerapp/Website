@@ -18,7 +18,7 @@
         </a>
       </div>
       <p v-if="mac" class="tag">Compatible with Apple Silicon and Intel</p>
-      <p v-if="win" class="tag">Compatible with Windwos 11/10</p>
+      <p v-if="win" class="tag">Compatible with Windows 11/10</p>
     </div>
   </NuxtLayout>
 </template>
