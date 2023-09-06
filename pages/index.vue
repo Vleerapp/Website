@@ -25,6 +25,8 @@
         <div class="card">
           <div class="soundwave3"></div>
           <div class="text">Full Control</div>
+          <p class="card-description">Have full control over what you listen to and also over the data that is not collected about you. Privacy first!</p>
+          <img src="/fullcontrol.svg" class="card-icon" alt="">
         </div>
         <div class="card">
           <div class="soundwave2"></div>
@@ -33,13 +35,19 @@
         </div>
         <div class="card">
           <div class="text">Offline</div>
+          <p class="card-description">Enjoy Music completly offline thanks to the serverles system we developed.</p>
+          <img src="/offline.svg" class="card-icon" alt="">
         </div>
         <div class="card">
           <div class="text">All formats</div>
+          <p class="card-description">Use every format of audio you want for the best accesability we added them all.</p>
+          <img src="/allformats.svg" class="card-icon" alt="">
         </div>
         <div class="card">
           <div class="soundwave1"></div>
           <div class="text">Search</div>
+          <p class="card-description">Search with our powerfull search bar through a land full of Music to enjoy.</p>
+          <img src="/search.svg" class="card-icon" alt="">
         </div>
       </div>
     </div>
@@ -57,7 +65,7 @@ export default {
   },
   methods: {
     updateHeight() {
-      if (document.body.offsetWidth <= 1200) {
+      if (document.body.offsetWidth <= 1248) {
         this.height = (46 / 79) * (document.body.offsetWidth - 64);
         this.width = document.body.offsetWidth - 64;
       } else {
@@ -67,7 +75,7 @@ export default {
     },
   },
   mounted() {
-    if (document.body.offsetWidth <= 1200) {
+    if (document.body.offsetWidth <= 1248) {
       this.height = (46 / 79) * (document.body.offsetWidth - 64);
       this.width = document.body.offsetWidth - 64;
     } else {
@@ -141,7 +149,7 @@ export default {
     height: 572px;
     display: grid;
     gap: 24px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 274px 274px;
     grid-template-columns: 384px 384px 384px;
     place-items: center;
 
@@ -150,8 +158,11 @@ export default {
       outline: 1px solid #544d5e6b;
       width: 100%;
       height: 100%;
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 34px;
+      padding-bottom: 0 !important;
       border-radius: 24px;
       font-size: 30px;
 
@@ -160,6 +171,21 @@ export default {
         margin-top: -40px; */
         max-width: 80%;
         z-index: 1;
+        font-size: 26px;
+      }
+
+      .card-icon{
+        width: 50px;
+        align-self: center;
+        z-index: 1;
+        position: absolute;
+        bottom: 34px;
+      }
+
+      .card-description{
+        font-size: 16px;
+        color: #ababab;
+        z-index: 1;
       }
 
       &:nth-child(2) {
@@ -167,11 +193,15 @@ export default {
         grid-row: 1 / 3;
         font-size: 45px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
 
         .text {
           margin-left: 0px;
           margin-top: 0px;
           max-width: 80%;
+          font-size: 44px;
         }
       }
     }
@@ -179,10 +209,6 @@ export default {
 }
 
 @media (min-width: 1248px) {
-  .soundwave {
-    display: none;
-  }
-
   .card:nth-child(1) {
     background-image: url("/card1.webp");
   }
@@ -298,6 +324,10 @@ export default {
 }
 
 @media (max-width: 900px) {
+  .cards {
+    padding-top: 100px;
+  }
+
   .soundwave1 {
     background-size: 300px;
     background-position: 130px 130px !important;
@@ -311,14 +341,13 @@ export default {
     display: none;
   }
 
-  .soundwave2{
+  .soundwave2 {
     background-size: 300px;
     background-position: 130px 130px;
   }
 
   .card-grid {
-    width: 100% !important;
-    height: 1370px !important;
+    height: 1468px !important;
     grid-template-rows: repeat(274px, 5) !important;
     grid-template-columns: 100% !important;
 
@@ -330,7 +359,8 @@ export default {
       &:nth-child(2) {
         .text {
           font-size: 32px;
-          max-width: 250px !important;
+          max-width: 290px !important;
+          font-weight: 500;
         }
       }
     }
@@ -356,6 +386,16 @@ export default {
   .hero-image {
     outline-offset: 6px;
     border-radius: 10px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .cards-text {
+    font-size: 32px !important;
+    max-width: 500px !important;
+    margin-bottom: 48px !important;
   }
 }
 </style>
