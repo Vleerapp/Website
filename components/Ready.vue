@@ -3,7 +3,7 @@
     <div class="ready-image-container">
       <img src="/app-logo-big.webp" alt="" class="app-logo">
     </div>
-    <h1 class="ready-title">Ready to take off?</h1>
+    <h3 class="ready-title">Ready to take off?</h3>
     <Download/>
   </div>
 </template>

@@ -31,6 +31,34 @@
   </NuxtLayout>
 </template>
 
+<script setup lang="ts">
+useSeoMeta({
+  title: "Vleer - The Story of Vleer",
+  description: 'Learn more about us the creators of Vleer',
+  ogTitle: 'Vleer - The Story of Vleer',
+  ogDescription: 'Learn more about us the creators of Vleer',
+  ogImage: '/logo.webp',
+  ogUrl: 'https://vleer.app',
+  twitterTitle: 'Vleer - The Story of Vleer',
+  twitterDescription: 'Learn more about us the creators of Vleer',
+  twitterImage: '/logo.webp',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/ico',
+      href: '/favicon.ico'
+    }
+  ]
+})
+</script>
+
 <style lang="scss">
 .about-container {
   max-width: 1136px;

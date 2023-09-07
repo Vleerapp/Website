@@ -2,16 +2,18 @@
   <NuxtLayout>
     <div class="download-content">
       <div class="logo-container">
-        <img src="/logo.webp" alt="" class="logo">
+        <img src="/logo.webp" alt="" class="logo" />
       </div>
       <div class="inner-content">
         <h1 class="download-title">Download our App</h1>
-        <h2 class="download-description">Lighting fast Desktop experience on all platforms</h2>
+        <h2 class="download-description">
+          Lighting fast Desktop experience on all platforms
+        </h2>
         <a href="">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
-              <img v-if="mac" class="button-inner-logo" src="/apple.svg" alt="">
-              <img v-if="win" class="button-inner-logo" src="/windows.svg" alt="">
+              <img v-if="mac" class="button-inner-logo" src="/apple.svg" alt="" />
+              <img v-if="win" class="button-inner-logo" src="/windows.svg" alt="" />
               Download
             </div>
           </div>
@@ -41,12 +43,38 @@ onMounted(startAnimation)
 onUnmounted(() => {
   clearTimeout(animationId);
 })
+
+useSeoMeta({
+  title: "Vleer - Download",
+  description: 'Download Vleer for mobile of desktop',
+  ogTitle: 'Vleer - Download',
+  ogDescription: 'Download Vleer for mobile of desktop',
+  ogImage: '/logo.webp',
+  ogUrl: 'https://vleer.app',
+  twitterTitle: 'Vleer - Download',
+  twitterDescription: 'Download Vleer for mobile of desktop',
+  twitterImage: '/logo.webp',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/ico',
+      href: '/favicon.ico'
+    }
+  ]
+})
 </script>
 
-<script lang="ts">
-export default{
+<scrip lang="ts">
+export default {
   data() {
-    return{
+    return {
       mac: false,
       win: true
     }
@@ -64,7 +92,7 @@ export default{
     }
   }
 }
-</script>
+</scrip>
 
 <style lang="scss">
 :root {
@@ -89,13 +117,12 @@ export default{
     gap: 8px;
     align-items: center;
     justify-content: center;
-  
-    .button-inner-logo{
+
+    .button-inner-logo {
       width: 24px;
     }
   }
 }
-
 
 ////////////////////////////
 
@@ -111,7 +138,7 @@ export default{
   width: 100%;
   height: 523px;
 
-  .logo-container{
+  .logo-container {
     height: 260px;
     margin-bottom: 48px;
   }
@@ -129,7 +156,6 @@ export default{
     flex-direction: column;
     margin-inline: 32px;
 
-
     .download-title {
       font-weight: 400;
       font-size: 48px;
@@ -139,14 +165,14 @@ export default{
     .download-description {
       font-size: 16px;
       font-family: Maax-Regular;
-      color: #ABABAB;
+      color: #ababab;
     }
   }
 
   .tag {
     margin: 16px;
     font-size: 12px;
-    color: #ABABAB;
+    color: #ababab;
   }
 }
 

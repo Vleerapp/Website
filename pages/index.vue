@@ -15,9 +15,9 @@
         class="hero-image" />
     </div>
     <div class="cards">
-      <h1 class="cards-text">
+      <h3 class="cards-text">
         Superchare your experience with the features of Vleer
-      </h1>
+      </h3>
       <div class="card-grid">
         <div class="card">
           <div class="soundwave3"></div>
@@ -84,6 +84,34 @@ export default {
   },
 };
 </script> -->
+
+<script setup lang="ts">
+useSeoMeta({
+  title: "Vleer - Enjoy music again",
+  description: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
+  ogTitle: 'Vleer - Enjoy music again',
+  ogDescription: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
+  ogImage: '/logo.webp',
+  ogUrl: 'https://vleer.app',
+  twitterTitle: 'Vleer - Enjoy music again',
+  twitterDescription: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
+  twitterImage: '/logo.webp',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/ico',
+      href: '/favicon.ico'
+    }
+  ]
+})
+</script>
 
 <style lang="scss">
 .title {
