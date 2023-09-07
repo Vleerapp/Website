@@ -9,13 +9,10 @@
       <Download />
     </div>
     <div id="hero-img-container" class="hero-img-container">
-      <img
-        :style="{ height: height + 'px', width: width + 'px' }"
-        src="/hero.webp"
-        alt=""
-        id="hero-image"
-        class="hero-image"
-      />
+      <!-- <img :style="{ height: height + 'px', width: width + 'px' }" src="/hero.webp" alt="" id="hero-image"
+        class="hero-image" /> -->
+      <img src="/hero.webp" alt="" id="hero-image"
+        class="hero-image" />
     </div>
     <div class="cards">
       <h1 class="cards-text">
@@ -25,7 +22,8 @@
         <div class="card">
           <div class="soundwave3"></div>
           <div class="text">Full Control</div>
-          <p class="card-description">Have full control over what you listen to and also over the data that is not collected about you. Privacy first!</p>
+          <p class="card-description">Have full control over what you listen to and also over the data that is not
+            collected about you. Privacy first!</p>
           <img src="/fullcontrol.svg" class="card-icon" alt="">
         </div>
         <div class="card">
@@ -55,7 +53,7 @@
   </NuxtLayout>
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts">
 export default {
   data() {
     return {
@@ -85,7 +83,7 @@ export default {
     window.addEventListener("resize", this.updateHeight);
   },
 };
-</script>
+</script> -->
 
 <style lang="scss">
 .title {
@@ -174,7 +172,7 @@ export default {
         font-size: 26px;
       }
 
-      .card-icon{
+      .card-icon {
         width: 50px;
         align-self: center;
         z-index: 1;
@@ -182,7 +180,7 @@ export default {
         bottom: 34px;
       }
 
-      .card-description{
+      .card-description {
         font-size: 16px;
         color: #ababab;
         z-index: 1;
