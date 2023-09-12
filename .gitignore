@@ -25,3 +25,5 @@ logs
 .vscode/
 .gitignore
 pnpm-lock.yaml
+bun.lockb
+.gitignore

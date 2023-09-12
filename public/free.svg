@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="48.125px" height="55.000977px" viewBox="0 0 48.125 55.000977" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="vuesaxlinearunlock">
+    <path d="M-12703.9 -8620L-12703.9 -8620L-12703.9 -8565L-12752 -8565L-12752 -8620L-12703.9 -8620Z" id="vuesaxlinearunlock" fill="none" stroke="none" />
+    <g id="vuesaxlinearunlock">
+      <g id="unlock">
+        <path d="M14.0368 50.417C6.01595 50.417 4.01074 48.1253 4.01074 38.9587L4.01074 34.3753C4.01074 25.2087 6.01595 22.917 14.0368 22.917L34.0889 22.917C42.1097 22.917 44.1149 25.2087 44.1149 34.3753L44.1149 38.9587C44.1149 48.1253 42.1097 50.417 34.0889 50.417L14.0368 50.417Z" id="Vector" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12.0312 22.9163L12.0312 18.333C12.0312 10.7476 14.0365 4.58301 24.0625 4.58301C33.0859 4.58301 36.0938 9.16634 36.0938 16.0413" id="Vector" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M24.0628 42.3958C21.2942 42.3958 19.0498 39.8308 19.0498 36.6667C19.0498 33.5025 21.2942 30.9375 24.0628 30.9375C26.8314 30.9375 29.0758 33.5025 29.0758 36.6667C29.0758 39.8308 26.8314 42.3958 24.0628 42.3958Z" id="Vector" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M0 55.0008L0 0L48.1248 0L48.1248 55.0008L0 55.0008Z" id="Vector" fill="none" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

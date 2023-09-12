@@ -37,9 +37,9 @@
           <img src="/offline.svg" class="card-icon" alt="">
         </div>
         <div class="card">
-          <div class="text">All formats</div>
-          <p class="card-description">Use every format of audio you want for the best accesability we added them all.</p>
-          <img src="/allformats.svg" class="card-icon" alt="">
+          <div class="text">Completly Free</div>
+          <p class="card-description">Vleer is 100% free and this will stay like this as long as Vleer is in our charge.</p>
+          <img src="/free.svg" class="card-icon" alt="">
         </div>
         <div class="card">
           <div class="soundwave1"></div>
