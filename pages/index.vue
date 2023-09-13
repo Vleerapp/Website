@@ -139,6 +139,7 @@ useHead({
   flex-direction: column;
   margin-bottom: 100px;
   padding-top: 180px;
+  width: 100%;
 }
 
 .hero-image {
