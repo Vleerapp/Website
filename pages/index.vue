@@ -9,10 +9,14 @@
       <Download />
     </div>
     <div id="hero-img-container" class="hero-img-container">
-      <!-- <img :style="{ height: height + 'px', width: width + 'px' }" src="/hero.webp" alt="" id="hero-image"
-        class="hero-image" /> -->
-      <img src="/hero.webp" alt="" id="hero-image"
-        class="hero-image" loading="lazy" />
+      <img
+        :style="{ height: height + 'px', width: width + 'px' }"
+        src="/hero.webp"
+        alt=""
+        id="hero-image"
+        class="hero-image"
+        loading="lazy"
+      />
     </div>
     <div class="cards">
       <h3 class="cards-text">
@@ -22,9 +26,11 @@
         <div class="card">
           <div class="soundwave3"></div>
           <div class="text">Full Control</div>
-          <p class="card-description">Have full control over what you listen to and also over the data that is not
-            collected about you. Privacy first!</p>
-          <img src="/fullcontrol.svg" class="card-icon" alt="" loading="lazy">
+          <p class="card-description">
+            Have full control over what you listen to and also over the data
+            that is not collected about you. Privacy first!
+          </p>
+          <img src="/fullcontrol.svg" class="card-icon" alt="" loading="lazy" />
         </div>
         <div class="card">
           <div class="soundwave2"></div>
@@ -33,19 +39,28 @@
         </div>
         <div class="card">
           <div class="text">Offline</div>
-          <p class="card-description">Enjoy Music completly offline thanks to the serverles system we developed.</p>
-          <img src="/offline.svg" class="card-icon" alt="" loading="lazy">
+          <p class="card-description">
+            Enjoy Music completly offline thanks to the serverles system we
+            developed.
+          </p>
+          <img src="/offline.svg" class="card-icon" alt="" loading="lazy" />
         </div>
         <div class="card">
           <div class="text">Completly Free</div>
-          <p class="card-description">Vleer is 100% free and this will stay like this as long as Vleer is in our charge.</p>
-          <img src="/free.svg" class="card-icon" alt="" loading="lazy">
+          <p class="card-description">
+            Vleer is 100% free and this will stay like this as long as Vleer is
+            in our charge.
+          </p>
+          <img src="/free.svg" class="card-icon" alt="" loading="lazy" />
         </div>
         <div class="card">
           <div class="soundwave1"></div>
           <div class="text">Search</div>
-          <p class="card-description">Search with our powerfull search bar through a land full of Music to enjoy.</p>
-          <img src="/search.svg" class="card-icon" alt="" loading="lazy">
+          <p class="card-description">
+            Search with our powerfull search bar through a land full of Music to
+            enjoy.
+          </p>
+          <img src="/search.svg" class="card-icon" alt="" loading="lazy" />
         </div>
       </div>
     </div>
@@ -53,65 +68,36 @@
   </NuxtLayout>
 </template>
 
-<!-- <script lang="ts">
-export default {
-  data() {
-    return {
-      height: (46 / 79) * (document.body.offsetWidth - 64),
-      width: document.body.offsetWidth - 64,
-    };
-  },
-  methods: {
-    updateHeight() {
-      if (document.body.offsetWidth <= 1248) {
-        this.height = (46 / 79) * (document.body.offsetWidth - 64);
-        this.width = document.body.offsetWidth - 64;
-      } else {
-        this.height = 690;
-        this.width = 1185;
-      }
-    },
-  },
-  mounted() {
-    if (document.body.offsetWidth <= 1248) {
-      this.height = (46 / 79) * (document.body.offsetWidth - 64);
-      this.width = document.body.offsetWidth - 64;
-    } else {
-      this.height = 690;
-      this.width = 1185;
-    }
-    window.addEventListener("resize", this.updateHeight);
-  },
-};
-</script> -->
-
 <script setup lang="ts">
 useSeoMeta({
   title: "Enjoy music again",
-  description: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
-  ogTitle: 'Vleer - Enjoy music again',
-  ogDescription: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
-  ogImage: '/logo.webp',
-  ogUrl: 'https://vleer.app',
-  twitterTitle: 'Vleer - Enjoy music again',
-  twitterDescription: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
-  twitterImage: '/logo.webp',
-  twitterCard: 'summary'
-})
+  description:
+    "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
+  ogTitle: "Vleer - Enjoy music again",
+  ogDescription:
+    "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
+  ogImage: "/logo.webp",
+  ogUrl: "https://vleer.app",
+  twitterTitle: "Vleer - Enjoy music again",
+  twitterDescription:
+    "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
+  twitterImage: "/logo.webp",
+  twitterCard: "summary",
+});
 
 useHead({
   titleTemplate: "%siteName - %s",
   htmlAttrs: {
-    lang: 'en'
+    lang: "en",
   },
   link: [
     {
-      rel: 'icon',
-      type: 'image/ico',
-      href: '/favicon.ico'
-    }
-  ]
-})
+      rel: "icon",
+      type: "image/ico",
+      href: "/favicon.ico",
+    },
+  ],
+});
 </script>
 
 <style lang="scss">
@@ -145,11 +131,18 @@ useHead({
 
 .hero-image {
   max-width: 1185px;
-  height: auto;
-  width: 100%;
+  height: 690px;
+  width: 1185px;
   outline: 1px solid #544d5e6b;
   outline-offset: 8px;
   border-radius: 22px;
+}
+
+@media (max-width: 1248px) {
+  .hero-image {
+    height: calc((46 / 79) * (100vw - 64px));
+    width: calc(100vw - 64px);
+  }
 }
 
 .hero-img-container {
