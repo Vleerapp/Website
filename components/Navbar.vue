@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="nav-left nav-content">
-        <NuxtLink to="/" alt="" class="nav-image"></NuxtLink>
+        <NuxtLink to="/" alt="" class="nav-image" area-label="Home"></NuxtLink>
         <div class="nav-left-text">
           Vleer
         </div>
