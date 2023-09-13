@@ -9,13 +9,25 @@
         <h2 class="download-description">
           Lighting fast Desktop experience on all platforms
         </h2>
-        <a href="">
+        <a v-if="mac" href="">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
-              <img v-if="mac" class="button-inner-logo" src="/apple.svg" alt="" />
-              <img v-if="win" class="button-inner-logo" src="/windows.svg" alt="" />
+              <img class="button-inner-logo" src="/apple.svg" alt="" />
               Download
             </div>
+          </div>
+        </a>
+        <a v-else-if="win" href="">
+          <div id="button-outter" class="button-outter">
+            <div class="button-inner-page">
+              <img class="button-inner-logo" src="/windows.svg" alt="" />
+              Download
+            </div>
+          </div>
+        </a>
+        <a v-else href="">
+          <div id="button-outter" class="button-outter">
+            <div class="button-inner-page">Download</div>
           </div>
         </a>
       </div>
@@ -31,45 +43,45 @@ let animationId: any = null;
 
 const startAnimation = async () => {
   while (true) {
-    document.documentElement.style.setProperty("--rotation", rotation + "deg")
+    document.documentElement.style.setProperty("--rotation", rotation + "deg");
     rotation += 2;
-    await new Promise(resolve => animationId = setTimeout(resolve, 16))
-    if (rotation >= 360) rotation = 0
+    await new Promise((resolve) => (animationId = setTimeout(resolve, 16)));
+    if (rotation >= 360) rotation = 0;
   }
-}
+};
 
-onMounted(startAnimation)
+onMounted(startAnimation);
 
 onUnmounted(() => {
   clearTimeout(animationId);
-})
+});
 
 useSeoMeta({
   title: "Download",
-  description: 'Download Vleer for mobile of desktop',
-  ogTitle: 'Vleer - Download',
-  ogDescription: 'Download Vleer for mobile of desktop',
-  ogImage: '/logo.webp',
-  ogUrl: 'https://vleer.app',
-  twitterTitle: 'Vleer - Download',
-  twitterDescription: 'Download Vleer for mobile of desktop',
-  twitterImage: '/logo.webp',
-  twitterCard: 'summary'
-})
+  description: "Download Vleer for mobile of desktop",
+  ogTitle: "Vleer - Download",
+  ogDescription: "Download Vleer for mobile of desktop",
+  ogImage: "/logo.webp",
+  ogUrl: "https://vleer.app",
+  twitterTitle: "Vleer - Download",
+  twitterDescription: "Download Vleer for mobile of desktop",
+  twitterImage: "/logo.webp",
+  twitterCard: "summary",
+});
 
 useHead({
   titleTemplate: "%siteName - %s",
   htmlAttrs: {
-    lang: 'en'
+    lang: "en",
   },
   link: [
     {
-      rel: 'icon',
-      type: 'image/ico',
-      href: '/favicon.ico'
-    }
-  ]
-})
+      rel: "icon",
+      type: "image/ico",
+      href: "/favicon.ico",
+    },
+  ],
+});
 </script>
 
 <script lang="ts">
@@ -77,21 +89,21 @@ export default {
   data() {
     return {
       mac: false,
-      win: true
-    }
+      win: true,
+    };
   },
   async mounted() {
     var platform = navigator.platform;
     if (platform.toLowerCase().includes("mac")) {
-      this.mac = true
-      this.win = false
+      this.mac = true;
+      this.win = false;
     }
     if (platform.toLowerCase().includes("win")) {
-      this.win = true
-      this.mac = false
+      this.win = true;
+      this.mac = false;
     }
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -136,7 +148,6 @@ export default {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 523px;
 
   .logo-container {
     height: 260px;
@@ -154,17 +165,24 @@ export default {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-inline: 32px;
 
     .download-title {
       font-weight: 400;
       font-size: 48px;
+      line-height: 32px;
       font-family: Maax-Regular;
+    }
+
+    @media (max-width: 480px) {
+      .download-title {
+        line-height: 48px;
+      }
     }
 
     .download-description {
       font-size: 16px;
-      font-family: Maax-Regular;
+      font-family: Inter;
+      font-weight: 400;
       color: #ababab;
     }
   }
@@ -179,7 +197,10 @@ export default {
 @media (max-height: 750px) {
   .download-content {
     position: relative;
-    top: 300px;
+    left: 0;
+    transform: none;
+    bottom: 32px;
+    margin-top: 32px;
   }
 }
 </style>
