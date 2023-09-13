@@ -10,11 +10,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.3",
-    "nuxt": "^3.7.1"
+    "nuxt": "^3.7.2"
   },
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
-    "nuxt-simple-sitemap": "^3.2.7",
+    "nuxt-simple-sitemap": "^3.2.9",
     "sass": "^1.66.1"
   }
 }

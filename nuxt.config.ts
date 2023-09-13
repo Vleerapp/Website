@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-simple-sitemap", "@nuxtjs/robots"],
+  site: {
+    url: "https://vleer.app",
+  },
   app: {
     head: {
       title: "Vleer",
