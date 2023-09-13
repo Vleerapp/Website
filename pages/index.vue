@@ -12,7 +12,7 @@
       <!-- <img :style="{ height: height + 'px', width: width + 'px' }" src="/hero.webp" alt="" id="hero-image"
         class="hero-image" /> -->
       <img src="/hero.webp" alt="" id="hero-image"
-        class="hero-image" />
+        class="hero-image" loading="lazy" />
     </div>
     <div class="cards">
       <h3 class="cards-text">
@@ -24,7 +24,7 @@
           <div class="text">Full Control</div>
           <p class="card-description">Have full control over what you listen to and also over the data that is not
             collected about you. Privacy first!</p>
-          <img src="/fullcontrol.svg" class="card-icon" alt="">
+          <img src="/fullcontrol.svg" class="card-icon" alt="" loading="lazy">
         </div>
         <div class="card">
           <div class="soundwave2"></div>
@@ -34,18 +34,18 @@
         <div class="card">
           <div class="text">Offline</div>
           <p class="card-description">Enjoy Music completly offline thanks to the serverles system we developed.</p>
-          <img src="/offline.svg" class="card-icon" alt="">
+          <img src="/offline.svg" class="card-icon" alt="" loading="lazy">
         </div>
         <div class="card">
           <div class="text">Completly Free</div>
           <p class="card-description">Vleer is 100% free and this will stay like this as long as Vleer is in our charge.</p>
-          <img src="/free.svg" class="card-icon" alt="">
+          <img src="/free.svg" class="card-icon" alt="" loading="lazy">
         </div>
         <div class="card">
           <div class="soundwave1"></div>
           <div class="text">Search</div>
           <p class="card-description">Search with our powerfull search bar through a land full of Music to enjoy.</p>
-          <img src="/search.svg" class="card-icon" alt="">
+          <img src="/search.svg" class="card-icon" alt="" loading="lazy">
         </div>
       </div>
     </div>
