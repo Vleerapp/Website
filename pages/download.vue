@@ -45,7 +45,7 @@ onUnmounted(() => {
 })
 
 useSeoMeta({
-  title: "Vleer - Download",
+  title: "Download",
   description: 'Download Vleer for mobile of desktop',
   ogTitle: 'Vleer - Download',
   ogDescription: 'Download Vleer for mobile of desktop',
@@ -58,6 +58,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: 'en'
   },
@@ -71,7 +72,7 @@ useHead({
 })
 </script>
 
-<scrip lang="ts">
+<script lang="ts">
 export default {
   data() {
     return {
@@ -79,9 +80,8 @@ export default {
       win: true
     }
   },
-  mounted() {
+  async mounted() {
     var platform = navigator.platform;
-    console.log(platform.toLowerCase())
     if (platform.toLowerCase().includes("mac")) {
       this.mac = true
       this.win = false
@@ -92,7 +92,7 @@ export default {
     }
   }
 }
-</scrip>
+</script>
 
 <style lang="scss">
 :root {

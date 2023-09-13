@@ -87,7 +87,7 @@ export default {
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Vleer - Enjoy music again",
+  title: "Enjoy music again",
   description: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
   ogTitle: 'Vleer - Enjoy music again',
   ogDescription: 'Discover a redefined way of listing to music, all conveniently accessible right at your fingertips',
@@ -100,6 +100,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: 'en'
   },

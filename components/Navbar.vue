@@ -2,25 +2,25 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="nav-left nav-content">
-        <NuxtLink to="/" alt="" class="nav-image" area-label="Home"></NuxtLink>
+        <SiteLink to="/" alt="" class="nav-image" area-label="Home"></SiteLink>
         <div class="nav-left-text">
           Vleer
         </div>
       </div>
       <div class="links">
-        <NuxtLink to="/" class="link Home">Home</NuxtLink>
-        <NuxtLink to="/about" class="link About">About</NuxtLink>
+        <SiteLink to="/" class="link Home">Home</SiteLink>
+        <SiteLink to="/about" class="link About">About</SiteLink>
         <a href="https://github.com/vleerapp/vleer/issues" class="link Issues" target="_blank">Issues</a>
-        <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
+        <SiteLink to="/contact" class="link Contact">Contact</SiteLink>
       </div>
       <div v-if="isMenuOpen" class="hamburger-menu">
-        <NuxtLink to="/" class="ham-link Home">Home</NuxtLink>
-        <NuxtLink to="/about" class="ham-link About">About</NuxtLink>
+        <SiteLink to="/" class="ham-link Home">Home</SiteLink>
+        <SiteLink to="/about" class="ham-link About">About</SiteLink>
         <a href="https://github.com/vleerapp/vleer/issues" class="ham-link Issues" target="_blank">Issues</a>
-        <NuxtLink to="/contact" class="ham-link Contact">Contact</NuxtLink>
+        <SiteLink to="/contact" class="ham-link Contact">Contact</SiteLink>
       </div>
       <div class="nav-right nav-content">
-        <NuxtLink to="/download" class="link btn download">Download</NuxtLink>
+        <SiteLink to="/download" class="link btn download">Download</SiteLink>
         <svg class="hammenu" width="26px" height="26px" viewBox="0 0 24 24" version="1.1"
           xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" @click="toggleMenu">
           <g id="vuesaxoutlinemenu">

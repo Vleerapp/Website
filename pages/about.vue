@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Vleer - The Story of Vleer",
+  title: "The Story of Vleer",
   description: 'Learn more about us the creators of Vleer',
   ogTitle: 'Vleer - The Story of Vleer',
   ogDescription: 'Learn more about us the creators of Vleer',
@@ -46,6 +46,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: 'en'
   },

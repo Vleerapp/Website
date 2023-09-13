@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Vleer - Contact us",
+  title: "Contact us",
   description: 'Contact us if you want to help us build a better future for music apps',
   ogTitle: 'Vleer - Contact us',
   ogDescription: 'Contact us if you want to help us build a better future for music apps',
@@ -19,6 +19,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: 'en'
   },
