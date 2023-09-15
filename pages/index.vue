@@ -9,13 +9,15 @@
       <Download />
     </div>
     <div id="hero-img-container" class="hero-img-container">
-      <img
-        :style="{ height: height + 'px', width: width + 'px' }"
-        src="/hero.webp"
+      <nuxt-img
+        src="/hero.png"
         alt=""
         id="hero-image"
         class="hero-image"
         loading="lazy"
+        quality="80"
+        densities="x1 x2"
+        width="400"
       />
     </div>
     <div class="cards">
@@ -30,7 +32,12 @@
             Have full control over what you listen to and also over the data
             that is not collected about you. Privacy first!
           </p>
-          <img src="/fullcontrol.svg" class="card-icon" alt="" loading="lazy" />
+          <nuxt-img
+            src="/fullcontrol.svg"
+            class="card-icon"
+            alt=""
+            loading="lazy"
+          />
         </div>
         <div class="card">
           <div class="soundwave2"></div>
@@ -43,7 +50,12 @@
             Enjoy Music completly offline thanks to the serverles system we
             developed.
           </p>
-          <img src="/offline.svg" class="card-icon" alt="" loading="lazy" />
+          <nuxt-img
+            src="/offline.svg"
+            class="card-icon"
+            alt=""
+            loading="lazy"
+          />
         </div>
         <div class="card">
           <div class="text">Completly Free</div>
@@ -51,7 +63,7 @@
             Vleer is 100% free and this will stay like this as long as Vleer is
             in our charge.
           </p>
-          <img src="/free.svg" class="card-icon" alt="" loading="lazy" />
+          <nuxt-img src="/free.svg" class="card-icon" alt="" loading="lazy" />
         </div>
         <div class="card">
           <div class="soundwave1"></div>
@@ -60,7 +72,7 @@
             Search with our powerfull search bar through a land full of Music to
             enjoy.
           </p>
-          <img src="/search.svg" class="card-icon" alt="" loading="lazy" />
+          <nuxt-img src="/search.svg" class="card-icon" alt="" loading="lazy" />
         </div>
       </div>
     </div>

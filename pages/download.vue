@@ -2,7 +2,7 @@
   <NuxtLayout>
     <div class="download-content">
       <div class="logo-container">
-        <img src="/logo.webp" alt="" class="logo" />
+        <nuxt-img src="/logo.webp" alt="" class="logo" />
       </div>
       <div class="inner-content">
         <h1 class="download-title">Download our App</h1>
@@ -12,7 +12,7 @@
         <a v-if="mac" href="">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
-              <img class="button-inner-logo" src="/apple.svg" alt="" />
+              <nuxt-img class="button-inner-logo" src="/apple.svg" alt="" />
               Download
             </div>
           </div>
@@ -20,7 +20,7 @@
         <a v-else-if="win" href="">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
-              <img class="button-inner-logo" src="/windows.svg" alt="" />
+              <nuxt-img class="button-inner-logo" src="/windows.svg" alt="" />
               Download
             </div>
           </div>
