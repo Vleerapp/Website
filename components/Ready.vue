@@ -1,7 +1,7 @@
 <template>
   <div class="ready">
     <div class="ready-image-container">
-      <nuxt-img src="/app-logo-big.webp" alt="" class="app-logo" />
+      <nuxt-img src="/app-logo-big.webp" alt="" class="app-logo" width="120" height="120" />
     </div>
     <h3 class="ready-title">Ready to take off?</h3>
     <Download/>

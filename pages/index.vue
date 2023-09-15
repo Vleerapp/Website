@@ -14,10 +14,8 @@
         alt=""
         id="hero-image"
         class="hero-image"
-        loading="lazy"
         quality="80"
         densities="x1 x2"
-        width="400"
       />
     </div>
     <div class="cards">
