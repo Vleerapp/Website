@@ -52,6 +52,10 @@ useHead({
   },
   link: [
     {
+      rel: 'canonical',
+      href: 'https://vleer.app/about',
+    },
+    {
       rel: 'icon',
       type: 'image/ico',
       href: '/favicon.ico'

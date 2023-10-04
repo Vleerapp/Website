@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="nav-left nav-content">
-        <SiteLink to="/" alt="" class="nav-image" area-label="Home"></SiteLink>
+        <SiteLink to="/" alt="nav-image" name="home" class="nav-image" area-label="Home"></SiteLink>
         <div class="nav-left-text">
           Vleer
         </div>

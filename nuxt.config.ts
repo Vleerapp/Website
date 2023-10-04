@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtseo/module", "@nuxt/image"],
+  modules: ["@nuxt/image", "nuxt-simple-sitemap", "@nuxtjs/robots"],
   image: {
     quality: 80,
     format: ["webp"],
@@ -15,24 +15,8 @@ export default defineNuxtConfig({
       "2xl": 3072,
     },
   },
-  site: {
-    url: "https://vleer.app",
-    name: "Vleer",
-    description:
-      "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
-    defaultLocale: "en",
-    identity: {
-      type: "Organization",
-    },
-    twitter: "@vleerapp",
-    trailingSlash: true,
-  },
   app: {
     head: {
-      titleTemplate: "%siteName %separator %s",
-      templateParams: {
-        separator: "-",
-      },
       title: "Vleer",
       script:
         process.env.NODE_ENV === "production"

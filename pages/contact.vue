@@ -25,6 +25,10 @@ useHead({
   },
   link: [
     {
+      rel: 'canonical',
+      href: 'https://vleer.app/contact',
+    },
+    {
       rel: 'icon',
       type: 'image/ico',
       href: '/favicon.ico'

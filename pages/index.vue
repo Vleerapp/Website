@@ -11,7 +11,7 @@
     <div id="hero-img-container" class="hero-img-container">
       <nuxt-img
         src="/hero.png"
-        alt=""
+        alt="hero"
         id="hero-image"
         class="hero-image"
         quality="80"
@@ -101,6 +101,10 @@ useHead({
     lang: "en",
   },
   link: [
+    {
+      rel: 'canonical',
+      href: 'https://vleer.app',
+    },
     {
       rel: "icon",
       type: "image/ico",

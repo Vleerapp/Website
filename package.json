@@ -9,12 +9,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.8.3",
+    "@nuxt/devtools": "1.0.0-beta.0",
     "@nuxt/image": "1.0.0-rc.2",
-    "@nuxtseo/module": "2.0.0-beta.15",
-    "nuxt": "^3.7.3"
+    "nuxt": "^3.7.4"
   },
   "dependencies": {
-    "sass": "^1.67.0"
+    "@nuxtjs/robots": "^3.0.0",
+    "nuxt-simple-sitemap": "^3.3.5",
+    "sass": "^1.68.0"
   }
 }
