@@ -9,7 +9,7 @@
         <h2 class="download-description">
           Lighting fast Desktop experience on all platforms
         </h2>
-        <a v-if="mac" href="">
+        <a v-if="mac" href="https://cdn.obvtiger.ch/vleerapp/releases/beta/Vleer-beta1.0.dmg">
           <div id="button-outter" class="button-outter">
             <div class="button-inner-page">
               <nuxt-img class="button-inner-logo" src="/apple.svg" alt="" />
@@ -57,7 +57,7 @@ onUnmounted(() => {
 });
 
 useSeoMeta({
-  title: "Download",
+  title: "Vleer - Download",
   description: "Download Vleer for mobile of desktop",
   ogTitle: "Vleer - Download",
   ogDescription: "Download Vleer for mobile of desktop",
@@ -70,7 +70,6 @@ useSeoMeta({
 });
 
 useHead({
-  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: "en",
   },

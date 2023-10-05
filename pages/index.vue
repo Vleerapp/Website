@@ -80,7 +80,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Enjoy music again",
+  title: "Vleer - Enjoy music again",
   description:
     "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
   ogTitle: "Vleer - Enjoy music again",
@@ -96,7 +96,6 @@ useSeoMeta({
 });
 
 useHead({
-  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: "en",
   },

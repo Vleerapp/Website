@@ -33,20 +33,19 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "The Story of Vleer",
+  title: "Vleer - The Story about us",
   description: 'Learn more about us the creators of Vleer',
-  ogTitle: 'Vleer - The Story of Vleer',
+  ogTitle: 'Vleer - The Story about us',
   ogDescription: 'Learn more about us the creators of Vleer',
   ogImage: '/logo.webp',
   ogUrl: 'https://vleer.app',
-  twitterTitle: 'Vleer - The Story of Vleer',
+  twitterTitle: 'Vleer - The Story about us',
   twitterDescription: 'Learn more about us the creators of Vleer',
   twitterImage: '/logo.webp',
   twitterCard: 'summary'
 })
 
 useHead({
-  titleTemplate: "%siteName - %s",
   htmlAttrs: {
     lang: 'en'
   },
