@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <div class="hero">
-      <h1 class="title">Enjoy music again with Vleer</h1>
+      <h1 class="title">A Music app from the Future</h1>
       <h2 class="description">
         Discover a redefined way of listing to music, all conveniently
         accessible right at your fingertips
