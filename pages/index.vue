@@ -80,15 +80,15 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Vleer - Enjoy music again",
+  title: "Vleer - A Music app from the Future",
   description:
     "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
-  ogTitle: "Vleer - Enjoy music again",
+  ogTitle: "Vleer - A Music app from the Future",
   ogDescription:
     "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
   ogImage: "/logo.webp",
   ogUrl: "https://vleer.app",
-  twitterTitle: "Vleer - Enjoy music again",
+  twitterTitle: "Vleer - A Music app from the Future",
   twitterDescription:
     "Discover a redefined way of listing to music, all conveniently accessible right at your fingertips",
   twitterImage: "/logo.webp",
