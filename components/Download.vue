@@ -1,11 +1,11 @@
 <template>
-  <nuxt-link to="/download">
+  <a href="https://github.com/vleerapp/Vleer" target="_blank">
     <div id="button-outter" class="button-outter">
       <div class="button-inner">
-        Download
+        Star it us Github
       </div>
     </div>
-  </nuxt-link>
+  </a>
 </template>
 
 <script setup lang="ts">
