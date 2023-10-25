@@ -2,7 +2,7 @@
   <a href="https://github.com/vleerapp/Vleer" target="_blank">
     <div id="button-outter" class="button-outter">
       <div class="button-inner">
-        Star Vleer Github
+        Star Vleer on Github
       </div>
     </div>
   </a>
