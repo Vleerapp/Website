@@ -5,8 +5,12 @@
         <h1 class="contact-title">Contact us</h1>
         <p class="text">You can contact us on:</p>
         <div class="tags">
-          <img src="xbanner.png" alt="xbanner" class="x banner">
-          <img src="discordbanner.png" alt="discordbanner" class="discord banner">
+          <a target="_blank" href="https://twitter.com/vleerapp">
+          <img src="/xbanner.png" alt="xbanner" class="x banner">
+          </a>
+          <a target="_blank" href="https://discord.gg/5cGXbeD8zN">
+          <img src="/discordbanner.png" alt="discordbanner" class="discord banner">
+          </a>
         </div>
         <p class="text">or via Email at <a href="mailto:contact@vleer.app">contact@vleer.app</a></p>
       </div>

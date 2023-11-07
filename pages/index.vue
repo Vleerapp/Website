@@ -45,7 +45,7 @@
         <div class="card">
           <div class="text">Offline</div>
           <p class="card-description">
-            Enjoy Music completly offline thanks to the serverles system we
+            Enjoy Music completly offline thanks to the serverless system we
             developed.
           </p>
           <nuxt-img
