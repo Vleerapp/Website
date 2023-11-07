@@ -22,9 +22,9 @@ export default defineNuxtConfig({
         process.env.NODE_ENV === "production"
           ? [
               {
-                src: "https://umami-pandadev.vercel.app/script.js",
-                async: true,
-                "data-website-id": "dce944c8-095d-4019-90ec-8ea131c78d98",
+                src: "https://plausible.pandadev.net/js/script.js",
+                defer: true,
+                "data-domain": "vleer.app",
               },
             ]
           : [],
