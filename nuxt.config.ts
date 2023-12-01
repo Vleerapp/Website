@@ -18,8 +18,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Vleer",
-      script:
-        process.env.NODE_ENV === "production"
+      script: [
+        {
+          src: "https://cdn.obvtiger.ch/jsdlrv/locomotive-scroll.min.js",
+          async: true,
+          defer: true,
+        },
+        ...(process.env.NODE_ENV === "production"
           ? [
               {
                 src: "https://plausible.pandadev.net/js/script.js",
@@ -27,7 +32,14 @@ export default defineNuxtConfig({
                 "data-domain": "vleer.app",
               },
             ]
-          : [],
+          : []),
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.obvtiger.ch/jsdlrv/locomotive-scroll.min.css",
+        },
+      ],
     },
   },
 });

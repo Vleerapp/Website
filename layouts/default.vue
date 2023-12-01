@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <div class="content">
+  <div class="content locomotive-scroll">
     <slot />
   </div>
 </template>
