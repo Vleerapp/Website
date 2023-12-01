@@ -19,11 +19,6 @@ export default defineNuxtConfig({
     head: {
       title: "Vleer",
       script: [
-        {
-          src: "https://cdn.obvtiger.ch/jsdlrv/locomotive-scroll.min.js",
-          async: true,
-          defer: true,
-        },
         ...(process.env.NODE_ENV === "production"
           ? [
               {
@@ -33,12 +28,6 @@ export default defineNuxtConfig({
               },
             ]
           : []),
-      ],
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://cdn.obvtiger.ch/jsdlrv/locomotive-scroll.min.css",
-        },
       ],
     },
   },
