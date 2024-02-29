@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "nuxt-simple-sitemap", "@nuxtjs/robots"],
+  modules: ["@nuxt/image", "@nuxtjs/sitemap", "nuxt-simple-robots"],
   image: {
     quality: 80,
     format: ["webp"],

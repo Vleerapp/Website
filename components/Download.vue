@@ -8,9 +8,9 @@
   </a>
 </template>
 
-<script setup lang="ts">
+<script setup>
 let rotation = 90;
-let animationId: any = null;
+let animationId = null;
 
 const startAnimation = async () => {
   while (true) {

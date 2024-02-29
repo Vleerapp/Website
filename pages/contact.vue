@@ -18,7 +18,7 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useSeoMeta({
   title: "Vleer - Contact us",
   description: 'Contact us if you want to help us build a better future for music apps',

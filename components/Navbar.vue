@@ -2,25 +2,25 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="nav-left nav-content">
-        <SiteLink to="/" alt="nav-image" name="home" class="nav-image" area-label="Home"></SiteLink>
+        <NuxtLink to="/" alt="nav-image" name="home" class="nav-image" area-label="Home"></NuxtLink>
         <div class="nav-left-text">
           Vleer
         </div>
       </div>
       <div class="links">
-        <SiteLink to="/" class="link Home">Home</SiteLink>
-        <SiteLink to="/about" class="link About">About</SiteLink>
+        <NuxtLink to="/" class="link Home">Home</NuxtLink>
+        <NuxtLink to="/about" class="link About">About</NuxtLink>
         <a href="https://github.com/vleerapp/vleer/issues" class="link Issues" target="_blank">Issues</a>
-        <SiteLink to="/contact" class="link Contact">Contact</SiteLink>
+        <NuxtLink to="/contact" class="link Contact">Contact</NuxtLink>
       </div>
       <div v-if="isMenuOpen" class="hamburger-menu">
-        <SiteLink to="/" class="ham-link Home">Home</SiteLink>
-        <SiteLink to="/about" class="ham-link About">About</SiteLink>
+        <NuxtLink to="/" class="ham-link Home">Home</NuxtLink>
+        <NuxtLink to="/about" class="ham-link About">About</NuxtLink>
         <a href="https://github.com/vleerapp/vleer/issues" class="ham-link Issues" target="_blank">Issues</a>
-        <SiteLink to="/contact" class="ham-link Contact">Contact</SiteLink>
+        <NuxtLink to="/contact" class="ham-link Contact">Contact</NuxtLink>
       </div>
       <div class="nav-right nav-content">
-        <SiteLink to="/download" class="link btn download">Download</SiteLink>
+        <NuxtLink to="/download" class="link btn download">Download</NuxtLink>
         <svg class="hammenu" width="26px" height="26px" viewBox="0 0 24 24" version="1.1"
           xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" @click="toggleMenu">
           <g id="vuesaxoutlinemenu">
@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default{
   data(){
     return {

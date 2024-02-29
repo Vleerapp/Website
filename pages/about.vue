@@ -31,7 +31,7 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useSeoMeta({
   title: "Vleer - The Story about us",
   description: 'Learn more about us the creators of Vleer',

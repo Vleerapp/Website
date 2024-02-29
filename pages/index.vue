@@ -78,7 +78,7 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useSeoMeta({
   title: "Vleer - A Music app from the Future",
   description:
