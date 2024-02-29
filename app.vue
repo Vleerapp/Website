@@ -2,6 +2,24 @@
   <NuxtPage />
 </template>
 
+<!-- <script>
+export default {
+  mounted() {
+    this.$nextTick(() => {
+      const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".locomotive-scroll"),
+        smooth: true,
+        multiplier: 0.6,
+      });
+
+      setTimeout(() => {
+        locoScroll.update();
+      }, 2000);
+    });
+  },
+};
+</script> -->
+
 <style lang="scss">
 $background: #030303;
 $small-text: #ababab;

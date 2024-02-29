@@ -10,7 +10,7 @@
     </div>
     <div id="hero-img-container" class="hero-img-container">
       <nuxt-img
-        src="/hero.png"
+        src="/hero.webp"
         alt="hero"
         id="hero-image"
         class="hero-image"

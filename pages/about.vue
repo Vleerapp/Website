@@ -4,7 +4,7 @@
       <div class="about">
         <h1 class="about-title">The Story of Vleer</h1>
         <p class="text">Once upon a time, in the world of digital tunes and streaming melodies, two friends embarked on a
-          mission. PandaDEV and Waradu had a simple dream – to create an uncomplicated music app that wouldn't break the
+          mission. <a href="https://pandadev.net">PandaDEV</a> and <a href="https://waradu.dev">Waradu</a> had a simple dream – to create an uncomplicated music app that wouldn't break the
           bank. You see, PandaDEV was tired of wrestling with complicated music apps that demanded hard-earned money.
           <br><br>
           One day, PandaDEV decided to take matters into his own hands. He wanted to craft a music player that was easy to

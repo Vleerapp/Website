@@ -6,10 +6,10 @@
         <p class="text">You can contact us on:</p>
         <div class="tags">
           <a target="_blank" href="https://twitter.com/vleerapp">
-          <img src="/xbanner.png" alt="xbanner" class="x banner">
+          <img src="/xbanner.webp" alt="xbanner" class="x banner">
           </a>
           <a target="_blank" href="https://discord.gg/5cGXbeD8zN">
-          <img src="/discordbanner.png" alt="discordbanner" class="discord banner">
+          <img src="/discordbanner.webp" alt="discordbanner" class="discord banner">
           </a>
         </div>
         <p class="text">or via Email at <a href="mailto:contact@vleer.app">contact@vleer.app</a></p>
