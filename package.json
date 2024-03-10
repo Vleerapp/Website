@@ -1,6 +1,7 @@
 {
-  "name": "vleer-website",
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,14 +9,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
-  "devDependencies": {
-    "@nuxt/devtools": "1.0.4",
-    "@nuxt/image": "1.1.0",
-    "nuxt": "^3.8.2"
-  },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0",
-    "nuxt-simple-sitemap": "^4.1.7",
-    "sass": "^1.69.5"
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   }
 }
