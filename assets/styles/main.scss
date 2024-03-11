@@ -50,7 +50,7 @@ body {
 }
 
 body {
-  padding-top: 1200px;
+  padding-top: calc(500px + calc((calc(100vw + 1px) * .8) * 9 / 16))
 }
 
 .navbar {
