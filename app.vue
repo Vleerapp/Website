@@ -12,33 +12,42 @@
     <div class="horizontal"></div>
     <div class="horizontal"></div>
     <div class="horizontal down"></div>
-    <div class="horizontal down"></div>
+    <div class="horizontal down more"></div>
 
     <div class="vertical"></div>
     <div class="vertical"></div>
     <div class="vertical right"></div>
     <div class="vertical right"></div>
-
-    <div class="title">
-      Vleer
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
 
     <div class="introduction">
-      Introducing
+      <span>Introducing</span>
+    </div>
+
+    <div class="title">
+      <span>Vleer</span>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
 
     <div class="description">
-      A Music app from<br>the Future
+      <span>A Music app from<br>the Future</span>
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
   </div>
   <img class="hero" src="~/assets/images/hero.png" />
-  <div class="space"></div>
+  <div class="x">
+    <div class="xes">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="xes">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">

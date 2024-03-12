@@ -4,7 +4,7 @@ $background: #121212;
 $gray: rgba(255, 255, 255, 0.5);
 
 $line-thickness: 1px;
-$space: 80;
+$space: 70;
 $spacepx: $space + 0px;
 $horizontal-lines-gradient: linear-gradient(
   270deg,
@@ -50,7 +50,7 @@ body {
 }
 
 body {
-  padding-top: calc(500px + calc((calc(100vw + 1px) * .8) * 9 / 16))
+  padding-top: calc(500px + calc((calc(100vw + 1px) * .5) * 9 / 16))
 }
 
 .navbar {
@@ -58,7 +58,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  width: 9px * $space;
+  width: 9px * $space + 20px;
   height: 1px * $space;
   top: 0;
   left: 50%;
@@ -105,6 +105,47 @@ body {
   }
 }
 
+.x {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 9px * $space + 20px;
+  height: 1px * $space;
+  top: 2px * $space;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 100;
+
+  .xes {
+    height: 1px * $space;
+    width: 1px * $space;
+    position: relative;
+
+    .line:nth-child(1) {
+      width: 60px;
+      height: 1px;
+      background-color: #212121;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      rotate: 45deg;
+    }
+
+    .line:nth-child(2) {
+      width: 60px;
+      height: 1px;
+      background-color: #212121;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      rotate: -45deg;
+    }
+  }
+}
+
 .content {
   width: 100%;
   height: 7px * $space;
@@ -125,6 +166,10 @@ body {
 
         &.down {
           top: #{$i * $spacepx + $space};
+
+          &.more {
+            top: #{$i * $spacepx + $space + 16px};
+          }
         }
       }
     }
@@ -141,10 +186,10 @@ body {
 
     @for $i from 1 to 5 {
       &:nth-child(#{$i + 5}) {
-        left: calc(50% - #{$i * $spacepx + 2 * $space + (0.5 * $space)});
+        left: calc(50% - #{$i * $spacepx + 2 * $space + (0.5 * $space)} - 10px);
 
         &.right {
-          left: calc(50% + #{$i * $spacepx + (0.5 * $space)});
+          left: calc(50% + #{$i * $spacepx + (0.5 * $space)} + 10px);
         }
       }
     }
@@ -152,7 +197,7 @@ body {
 
   .introduction {
     color: white;
-    width: 7px * $space;
+    width: 7px * $space + 20px;
     height: 1px * $space;
     position: absolute;
     display: flex;
@@ -166,42 +211,49 @@ body {
     translate: -50% 0;
     text-align: center;
 
+    span {
+      margin-top: 4px;
+    }
+
     &:before {
       content: "";
       display: block;
       width: 85px;
-      height: 2px;
-      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+      height: 1px;
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
       position: relative;
-      left: -10px;
+      left: -24px;
     }
 
     &:after {
       content: "";
       display: block;
       width: 85px;
-      height: 2px;
-      background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+      height: 1px;
+      background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
       position: relative;
-      right: -10px;
+      right: -24px;
     }
   }
 
   .title {
     color: white;
     font-family: 'Maax';
-    width: 7px * $space;
+    width: 7px * $space + 20px;
     height: 2px * $space;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 140px;
+    font-size: 144px;
     font-weight: 500;
     top: 3px * $space;
     left: 50%;
     translate: -50% 0;
-    padding-top: 8px;
+
+    span {
+      margin-top: 12px;
+    }
 
     .dot {
       position: absolute;
@@ -212,22 +264,22 @@ body {
       box-shadow: 0 0 10px white;
       opacity: 80%;
 
-      &:nth-child(1) {
+      &:nth-child(2) {
         top: -3px;
         left: -3px;
       }
 
-      &:nth-child(2) {
+      &:nth-child(3) {
         top: -3px;
         left: calc(100% - 3px);
       }
 
-      &:nth-child(3) {
+      &:nth-child(4) {
         top: calc(100% - 3px);
         left: calc(100% - 3px);
       }
 
-      &:nth-child(4) {
+      &:nth-child(5) {
         top: calc(100% - 3px);
         left: -3px;
       }
@@ -236,18 +288,22 @@ body {
 
   .description {
     color: white;
-    width: 7px * $space;
-    height: 1px * $space;
+    width: 7px * $space + 20px;
+    height: 1px * $space + 16px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 300;
     top: 5px * $space;
     left: 50%;
     translate: -50% 0;
     text-align: center;
+
+    span {
+      margin-top: 4px;
+    }
 
     .dot {
       position: absolute;
@@ -276,7 +332,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  width: 70%;
+  width: 50%;
   top: 6px * $space + 50px;
   left: 50%;
   translate: -50% 0;
