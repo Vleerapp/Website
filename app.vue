@@ -36,17 +36,18 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
-  </div>
-  <img class="hero" src="~/assets/images/hero.png" />
-  <div class="x">
-    <div class="xes">
-      <div class="line"></div>
-      <div class="line"></div>
+
+    <div class="x">
+      <div class="xes">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="xes">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="xes">
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    <img class="hero" src="~/assets/images/hero.png" />
   </div>
 </template>
 
