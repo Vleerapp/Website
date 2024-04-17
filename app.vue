@@ -4,7 +4,7 @@
 
     </div>
     <div class="download">
-      <a href="https://github.com/Vleerapp/Vleer/" class="download-btn">Download</a>
+      <a href="https://github.com/Vleerapp/Vleer/releases/latest" class="download-btn">Download</a>
     </div>
   </div>
   <div class="content">
