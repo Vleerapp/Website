@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "vleer-website",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,8 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.10.3",
-    "sass": "^1.71.1",
+    "nuxt": "^3.11.2",
+    "ofetch": "^1.3.4",
+    "sass": "^1.76.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }
