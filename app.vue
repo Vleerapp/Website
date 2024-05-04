@@ -20,6 +20,7 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 @font-face {
   font-family: 'CommitMono';
   src: url('~/assets/fonts/CommitMono.woff2') format('woff2');
+  font-display: swap;
   font-weight: 100 900;
 }
 

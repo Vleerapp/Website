@@ -5,7 +5,7 @@
       <p>Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.</p>
     </div>
     <div class="hero-img">
-      <img src="~/assets/images/hero-bg.svg" alt="">
+      <img alt="hero-bg" src="~/assets/images/hero-bg.svg" alt="">
     </div>
     <div class="hero-download">
       <Download class="download" />
@@ -25,7 +25,7 @@
       <div class="wrapper">
         <div class="image-outer">
           <div class="image-inner">
-            <img src="~/assets/images/image.png" alt="">
+            <img alt="image" src="~/assets/images/image.webp" alt="">
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="footer">
-    <img src="~/assets/images/footer.svg" alt="">
+    <img alt="footer-image" src="~/assets/images/footer.svg" alt="">
   </div>
 </template>
 

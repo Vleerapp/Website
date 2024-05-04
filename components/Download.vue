@@ -1,5 +1,5 @@
 <template>
-  <div @click="download()" class="button">
+  <div @click="download()" class="button plausible-event-name=Download">
     <svg v-if="os == 'macOS'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
       viewBox="0 0 16 16">
       <path fill="#2F3031"
