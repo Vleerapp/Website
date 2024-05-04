@@ -9,8 +9,6 @@
     <svg v-if="os == 'windows'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
       xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
       <g id="Windows 11">
-        <path d="M-13154 -6574L-13154 -6574L-13154 -6558L-13170 -6558L-13170 -6574L-13154 -6574Z" id="Windows-11"
-          fill="none" stroke="none" />
         <path d="M0 9L7 9L7 16L0 16L0 9Z" id="Rectangle" fill="#2F3031" fill-rule="evenodd" stroke="none"
           clip-path="url(#clip_1)" />
         <path d="M9 9L16 9L16 16L9 16L9 9Z" id="Rectangle" fill="#2F3031" fill-rule="evenodd" stroke="none"
