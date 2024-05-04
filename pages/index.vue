@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="hero-text">
       <h1>Your library to everything.</h1>
-      <p>Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.</p>
+      <h2>Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.</h2>
     </div>
     <div class="hero-img">
       <img alt="hero-bg" src="~/assets/images/hero-bg.svg">
@@ -19,8 +19,8 @@
   <div class="image-section">
     <div class="container">
       <div class="text">
-        <h4>Listen wihout any inerruptions.</h4>
-        <p>One application, all you every need.</p>
+        <h3 class="text-h3">Listen wihout any inerruptions.</h3>
+        <p class="text-p">One application, all you every need.</p>
       </div>
       <div class="wrapper">
         <div class="image-outer">
@@ -33,8 +33,8 @@
   </div>
   <div class="before-footer">
     <div class="text">
-      <h4>Take the easy way.</h4>
-      <p>Download and use Vleer for free.</p>
+      <h3 class="text-h3">Take the easy way.</h3>
+      <p class="text-p">Download and use Vleer for free.</p>
     </div>
     <div class="hero-download">
       <Download class="download" />
