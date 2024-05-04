@@ -25,7 +25,7 @@
       <div class="wrapper">
         <div class="image-outer">
           <div class="image-inner">
-            <img alt="image" src="~/assets/images/image.webp">
+            <img alt="image" loading="lazy" src="~/assets/images/image.webp">
           </div>
         </div>
       </div>
