@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="630px" height="388px" viewBox="0 0 630 388" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M-11760 -6814L-11760 -6814L-11760 -6426L-12390 -6426L-12390 -6814L-11760 -6814Z" id="path_1" />
+
+  </defs>
+  <g id="Frame">
+    <path d="M-11760 -6814L-11760 -6814L-11760 -6426L-12390 -6426L-12390 -6814L-11760 -6814Z" id="Frame" fill="none" stroke="none" />
+    <g id="Group" transform="translate(0.5 0.5)" clip-path="url(#clip_1)">
+      <path d="M55 387L574 387L574 332L629 332L629 55L574 55L574 0L55 0L55 55L0 55L0 332L55 332L55 387Z" id="Vector" fill="none" fill-rule="evenodd" stroke="#201F21" stroke-width="1" />
+      <path d="M55 55L574 55L574 332L55 332L55 55Z" id="Vector" fill="none" fill-rule="evenodd" stroke="#201F21" stroke-width="1" />
+    </g>
+    <g id="Group" transform="translate(54 54)" clip-path="url(#clip_1)">
+      <path d="M0 1.49998C0 0.675081 0.67157 0 1.5 0C2.32843 0 3 0.675081 3 1.49998C3 2.32492 2.32843 3 1.5 3C0.67157 3 0 2.32492 0 1.49998Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      <path d="M0 278.5C0 277.675 0.67157 277 1.5 277C2.32843 277 3 277.675 3 278.5C3 279.325 2.32843 280 1.5 280C0.67157 280 0 279.325 0 278.5Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      <path d="M519 278.5C519 277.675 519.672 277 520.5 277C521.328 277 522 277.675 522 278.5C522 279.325 521.328 280 520.5 280C519.672 280 519 279.325 519 278.5Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      <path d="M519 1.49998C519 0.675081 519.672 0 520.5 0C521.328 0 522 0.675081 522 1.49998C522 2.32492 521.328 3 520.5 3C519.672 3 519 2.32492 519 1.49998Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    </g>
+  </g>
+</svg>
