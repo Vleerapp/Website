@@ -102,6 +102,38 @@ export default {
 }
 </script>
 
+<script setup>
+useSeoMeta({
+  title: 'Vleer - Your library to everything.',
+  description: 'Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.',
+  ogTitle: 'Vleer - Your library to everything.',
+  ogDescription: 'Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.',
+  ogImage: '/logo.png',
+  ogUrl: 'https://vleer.app/',
+  twitterTitle: 'Vleer - Your library to everything.',
+  twitterDescription: 'Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.',
+  twitterImage: '/logo.png',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/ico',
+      href: '/favicon.ico'
+    },
+    {
+      rel: 'canonical',
+      href: 'https://vleer.app/',
+    }
+  ]
+})
+</script>
+
 <style lang="scss">
 @import '~/assets/css/index.scss';
 </style>

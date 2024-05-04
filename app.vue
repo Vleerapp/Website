@@ -8,7 +8,6 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
   <NuxtPage />
 </template>
 
-
 <style>
 @font-face {
   font-family: "Inter";
