@@ -1,13 +1,13 @@
+<script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
+</script>
+
 <template>
-  <SpeedInsights/>
-  <Navbar/>
+  <SpeedInsights />
+  <Navbar />
   <NuxtPage />
 </template>
 
-<script>
-import { SpeedInsights } from "@vercel/speed-insights/nuxt"
-
-</script>
 
 <style>
 @font-face {
