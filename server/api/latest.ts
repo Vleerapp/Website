@@ -11,12 +11,34 @@ export default defineEventHandler(async (event) => {
     const latestRelease = releases[0];
     const extension = os === 'macos' ? '.dmg' : os === 'windows' ? '.msi' : os === 'linux' ? '.deb' : "";
     const osSpecificAsset = latestRelease.assets.find(asset => asset.name.endsWith(extension));
+    const otherPlatforms = latestRelease.assets
+      .filter(asset => asset.name.endsWith('.dmg') || asset.name.endsWith('.msi') || asset.name.endsWith('.deb'))
+      .map(asset => ({
+        platform: asset.name.endsWith('.dmg') ? 'macos' :
+          asset.name.endsWith('.msi') ? 'windows' :
+            asset.name.endsWith('.deb') ? 'linux' : 'unknown',
+        url: asset.browser_download_url
+      }))
+      .filter(platform => platform.url !== osSpecificAsset?.browser_download_url);
+
     if (osSpecificAsset) {
-      return osSpecificAsset.browser_download_url;
+      return {
+        version: latestRelease.tag_name,
+        version_link: osSpecificAsset.browser_download_url,
+        other_platforms: otherPlatforms
+      };
     } else {
-      return 'No file found in the latest release';
+      return {
+        version: latestRelease.tag_name,
+        version_link: 'No file found for this platform in the latest release',
+        other_platforms: otherPlatforms
+      };
     }
   } else {
-    return 'No releases found';
+    return {
+      version: 'unknown',
+      version_link: 'No releases found',
+      other_platforms: []
+    };
   }
 })
