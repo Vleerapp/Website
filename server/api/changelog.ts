@@ -18,13 +18,13 @@ export default defineEventHandler(async (event) => {
       });
 
       if (response.status === 304) {
-        return { cachedDescriptions };
+        return cachedDescriptions;
       }
     } catch (error) {
       if (error.response?.status === 403) {
-        return { cachedDescriptions };
+        return cachedDescriptions;
       }
-      return { cachedDescriptions };
+      return cachedDescriptions;
     }
   }
 
@@ -32,17 +32,19 @@ export default defineEventHandler(async (event) => {
     const releases = await $fetch(`https://api.github.com/repos/${repo}/releases`);
     const descriptions = releases.map(release => ({
       tag_name: release.tag_name,
-      description: release.body || 'No description available'
+      description: release.body || 'No description available',
+      url: release.html_url,
+      date: release.published_at
     }));
 
     const latestEtag = releases.length > 0 ? releases[0].etag : '';
     myCache.set(cacheKey, descriptions);
     myCache.set(`${cacheKey}-etag`, latestEtag);
 
-    return { descriptions };
+    return descriptions;
   } catch (error) {
     if (error.response?.status === 403 && cachedDescriptions) {
-      return { cachedDescriptions };
+      return cachedDescriptions;
     }
     throw error; // rethrow the error if it's not a 403 or no cache is available
   }

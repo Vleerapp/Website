@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^5.1.4",
     "@vercel/speed-insights": "^1.0.10",
+    "markdown-it": "^14.1.0",
     "node-cache": "^5.1.2",
     "nuxt": "^3.11.2",
     "nuxt-schema-org": "^3.3.6",
