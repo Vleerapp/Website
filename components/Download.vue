@@ -47,23 +47,12 @@ export default {
   },
   methods: {
     async fetchDownloadUrl() {
-      const releases = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
-      if (releases.length > 0) {
-        const latestRelease = releases[0];
-        const extension = this.os === 'macos' ? '.dmg' : this.os === 'windows' ? '.msi' : this.os === 'linux' ? '.deb' : "";
-        const osSpecificAsset = latestRelease.assets.find(asset => asset.name.endsWith(extension));
-        if (osSpecificAsset) {
-          this.downloadUrl = osSpecificAsset.browser_download_url;
-        } else {
-          this.downloadUrl = 'No file found in the latest release';
-        }
-      } else {
-        this.downloadUrl = 'No releases found';
-      }
+      const res = await $fetch("/api/latest")
+      this.downloadUrl = res.version_link;
     },
     download() {
       if(this.downloadUrl != "") {
-        window.open(this.downloadUrl);
+        window.location.href = this.downloadUrl;
       }
     }
   },

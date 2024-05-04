@@ -23,26 +23,35 @@ export default defineEventHandler(async (event) => {
 
       if (response.status === 304) {
         return formatReleaseData(cachedRelease, os);
+      } else if (response.status === 403) {
+        return formatReleaseData(cachedRelease, os); // Return cached data if GitHub API returns 403
       }
     } catch (error) {
       return formatReleaseData(cachedRelease, os);
     }
   }
 
-  const releases = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
-  if (releases.length === 0) {
-    return {
-      version: 'unknown',
-      version_link: 'No releases found',
-      other_platforms: []
-    };
+  try {
+    const releases = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
+    if (releases.length === 0) {
+      return {
+        version: 'unknown',
+        version_link: 'No releases found',
+        other_platforms: []
+      };
+    }
+
+    const latestRelease = releases[0];
+    myCache.set(cacheKey, latestRelease);
+    myCache.set(`${cacheKey}-etag`, latestRelease.etag);
+
+    return formatReleaseData(latestRelease, os);
+  } catch (error) {
+    if (error.response?.status === 403 && cachedRelease) {
+      return formatReleaseData(cachedRelease, os); // Return cached data if GitHub API returns 403
+    }
+    throw error; // rethrow the error if it's not a 403 or no cache is available
   }
-
-  const latestRelease = releases[0];
-  myCache.set(cacheKey, latestRelease);
-  myCache.set(`${cacheKey}-etag`, latestRelease.etag);
-
-  return formatReleaseData(latestRelease, os);
 });
 
 function formatReleaseData(release, os) {

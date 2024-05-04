@@ -66,8 +66,7 @@ export default {
       const os = window.navigator.userAgent.toLowerCase().includes('mac') ? 'macos' :
       window.navigator.userAgent.toLowerCase().includes('win') ? 'windows' :
       window.navigator.userAgent.toLowerCase().includes('linux') ? 'linux' : 'linux';
-      
-      console.log(os);
+    
       
       this.os = os == 'macos' ? "macOS 10.15+" : os == 'windows' ? "win 7+" : "webkit2gtk 4.1+";
       
@@ -76,18 +75,19 @@ export default {
       if (os == "macos") {
         this.install = "Install with homebrew"
       }
-
+      
       /////////////
-
-      const version = await $fetch('/api/version');
+      
+      const version = await $fetch('/api/latest');
       this.version = version.version;
     },
     copyInstall() {
       if (this.install == "") return;
+
       
       const os = window.navigator.userAgent.toLowerCase().includes('mac') ? 'macos' :
-        window.navigator.userAgent.toLowerCase().includes('win') ? 'windows' :
-          window.navigator.userAgent.toLowerCase().includes('linux') ? 'linux' : 'linux';
+      window.navigator.userAgent.toLowerCase().includes('win') ? 'windows' :
+      window.navigator.userAgent.toLowerCase().includes('linux') ? 'linux' : 'linux';
 
       if (os == "macos") {
         const codeToCopy = "brew tap 0PandaDEV/repo\nbrew install --cask vleer@beta";
@@ -97,7 +97,6 @@ export default {
   },
   async mounted() {
     await this.init();
-
   }
 }
 </script>
