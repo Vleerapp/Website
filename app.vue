@@ -12,6 +12,12 @@
   src: url("~/assets/fonts/Inter.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: 'CommitMono';
+  src: url('~/assets/fonts/CommitMono.woff2') format('woff2');
+  font-weight: 100 900;
+}
+
 * {
   margin: 0;
   padding: 0;

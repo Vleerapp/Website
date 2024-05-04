@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="630px" height="388px" viewBox="0 0 630 388" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M55 55L575 55L575 333L55 333L55 55Z" id="path_1" />
+    <path d="M574 55L630 55L630 333L574 333L574 55Z" id="path_2" />
+    <path d="M55 332L575 332L575 388L55 388L55 332Z" id="path_3" />
+    <path d="M55 0L575 0L575 56L55 56L55 0Z" id="path_4" />
+    <path d="M0 55L56 55L56 333L0 333L0 55Z" id="path_5" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+    <clipPath id="clip_2">
+      <use xlink:href="#path_2" />
+    </clipPath>
+    <clipPath id="clip_3">
+      <use xlink:href="#path_3" />
+    </clipPath>
+    <clipPath id="clip_4">
+      <use xlink:href="#path_4" />
+    </clipPath>
+    <clipPath id="clip_5">
+      <use xlink:href="#path_5" />
+    </clipPath>
+  </defs>
+  <g id="Group">
+    <g id="Rectangle">
+      <g clip-path="url(#clip_1)">
+        <use xlink:href="#path_1" fill="none" stroke="#201F21" stroke-width="2" />
+      </g>
+    </g>
+    <g id="Rectangle">
+      <g clip-path="url(#clip_2)">
+        <use xlink:href="#path_2" fill="none" stroke="#201F21" stroke-width="0" />
+      </g>
+    </g>
+    <g id="Rectangle">
+      <g clip-path="url(#clip_3)">
+        <use xlink:href="#path_3" fill="none" stroke="#201F21" stroke-width="2" />
+      </g>
+    </g>
+    <g id="Rectangle">
+      <g clip-path="url(#clip_4)">
+        <use xlink:href="#path_4" fill="none" stroke="#201F21" stroke-width="2" />
+      </g>
+    </g>
+    <g id="Rectangle">
+      <g clip-path="url(#clip_5)">
+        <use xlink:href="#path_5" fill="none" stroke="#201F21" stroke-width="2" />
+      </g>
+    </g>
+  </g>
+  <g id="Group" transform="translate(54 54)">
+    <path d="M0 1.49998C0 0.675081 0.67157 0 1.5 0C2.32843 0 3 0.675081 3 1.49998C3 2.32492 2.32843 3 1.5 3C0.67157 3 0 2.32492 0 1.49998Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M0 278.5C0 277.675 0.67157 277 1.5 277C2.32843 277 3 277.675 3 278.5C3 279.325 2.32843 280 1.5 280C0.67157 280 0 279.325 0 278.5Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M519 278.5C519 277.675 519.672 277 520.5 277C521.328 277 522 277.675 522 278.5C522 279.325 521.328 280 520.5 280C519.672 280 519 279.325 519 278.5Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M519 1.49998C519 0.675081 519.672 0 520.5 0C521.328 0 522 0.675081 522 1.49998C522 2.32492 521.328 3 520.5 3C519.672 3 519 2.32492 519 1.49998Z" id="Oval" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

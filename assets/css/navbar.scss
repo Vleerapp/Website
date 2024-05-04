@@ -100,3 +100,18 @@
     padding: 0;
   }
 }
+
+@media (max-width: 720px) {
+  .download, .links{
+    display: none;
+  }
+
+  .navbar{
+    height: 58px;
+    padding: 16px;
+  }
+
+  .icon{
+    left: 16px;
+  }
+}

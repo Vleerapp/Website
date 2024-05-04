@@ -1,5 +1,5 @@
 <template>
-  <div v-if="os" @click="download()" class="button">
+  <div @click="download()" class="button">
     <svg v-if="os == 'macOS'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
       viewBox="0 0 16 16">
       <path fill="#2F3031"
@@ -50,7 +50,7 @@ export default {
       const releases = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
       if (releases.length > 0) {
         const latestRelease = releases[0];
-        const extension = this.os === 'macos' ? '.dmg' : this.os === 'windows' ? '.exe' : this.os === 'linux' ? '.deb' : "";
+        const extension = this.os === 'macos' ? '.dmg' : this.os === 'windows' ? '.msi' : this.os === 'linux' ? '.deb' : "";
         const osSpecificAsset = latestRelease.assets.find(asset => asset.name.endsWith(extension));
         if (osSpecificAsset) {
           this.downloadUrl = osSpecificAsset.browser_download_url;
@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .button {
   display: flex;
   flex-direction: row;
@@ -93,6 +93,7 @@ export default {
   height: 36px;
   cursor: pointer;
   transition: all .2s ease-in-out;
+  width: min-content;
 }
 
 .button:hover {
