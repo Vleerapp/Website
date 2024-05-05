@@ -1,6 +1,6 @@
 <template>
   <div @click="download()" class="button plausible-event-name=Download">
-    <svg v-if="os == 'macOS'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
+    <svg v-if="os == 'macos'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
       viewBox="0 0 16 16">
       <path fill="#2F3031"
         d="M12.665 15.358c-.905.844-1.893.711-2.843.311-1.006-.409-1.93-.427-2.991 0-1.33.551-2.03.391-2.825-.31C-.498 10.886.166 4.078 5.28 3.83c1.246.062 2.114.657 2.843.71 1.09-.213 2.133-.826 3.296-.746 1.393.107 2.446.64 3.138 1.6-2.88 1.662-2.197 5.315.443 6.337-.526 1.333-1.21 2.657-2.345 3.635zM8.03 3.778C7.892 1.794 9.563.16 11.483 0c.268 2.293-2.16 4-3.452 3.777">
@@ -19,8 +19,8 @@
           clip-path="url(#clip_1)" />
       </g>
     </svg>
-    <svg v-if="os == 'linux'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns="http://www.w3.org/2000/svg">
+    <svg v-if="os == 'linux'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
+      xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
       <g id="Linux">
         <path d="M-13154 -6574L-13154 -6574L-13154 -6558L-13170 -6558L-13170 -6574L-13154 -6574Z" id="Linux" fill="none"
           stroke="none" />
