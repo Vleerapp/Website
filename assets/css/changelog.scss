@@ -83,7 +83,21 @@
 
 @media (max-width: 720px) {
   .info {
+    position:static;
     align-items: center;
     margin-bottom: 48px;
   }
+
+  .header{
+    padding: calc(24px * 3) 0;
+  }
+
+  .changelog-content{
+    padding-top: 90px;
+
+    .changelog-container{
+      padding: 0 24px;
+    }
+  }
+
 }

@@ -101,6 +101,23 @@ export default {
       `, beforeStyle.sheet.cssRules.length);
       });
 
+      document.querySelectorAll('.description li').forEach(element => {
+        Object.assign(element.style, {
+          listStyleType: 'none',
+          position: "relative"
+        });
+
+        const beforeStyle = document.createElement('style');
+        document.head.appendChild(beforeStyle);
+        beforeStyle.sheet.insertRule(`
+        @media (max-width: 720px) {
+          .description li::before {
+            left: -36px;
+          }
+        }
+      `, beforeStyle.sheet.cssRules.length);
+      });
+
       document.querySelectorAll('.description p').forEach(element => {
         Object.assign(element.style, {
           fontSize: "20px",
