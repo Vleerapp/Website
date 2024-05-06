@@ -158,7 +158,55 @@
   box-shadow: 0 0 2px 0 hsla(0, 0%, 100%, .19), inset 0 .5px 0 0 hsla(0, 0%, 100%, .1);
 
   img {
-    width: 100%;
+    color: transparent;
+    position: relative;
+    width: 1188px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    max-width: 1220px;
+  }
+}
+
+.image-content {
+  position: relative;
+  height: 100%;
+
+  .menubar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 12px;
+    font-family: SF Pro;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    color: hsla(0, 0%, 100%, .4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .2), 0 36px 100px rgba(0, 0, 0, .7);
+
+    .landing {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+
+      .menu-items {
+        display: flex;
+        gap: 19px;
+        align-items: center;
+      }
+    }
+
+    .trailing {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      padding: 0 12px 0 0;
+    }
   }
 }
 
@@ -223,6 +271,10 @@
 
   .image-section {
     padding: 224px 24px;
+  }
+
+  .image-content .menubar {
+    display: flex;
   }
 }
 
