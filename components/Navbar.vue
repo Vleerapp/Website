@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="links">
-        <a class="link plausible-event-name=Issues" href="https://github.com/Vleerapp/Vleer/issues">Issues</a>
+        <a class="link plausible-event-name=Github" href="https://github.com/Vleerapp/">Github</a>
         <NuxtLink class="link" to="/changelog">
           Changelog
         </NuxtLink>
