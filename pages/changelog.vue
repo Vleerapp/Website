@@ -1,6 +1,11 @@
 <template>
   <div class="changelog-content">
-    <div class="changelog-container">
+    <div v-if="loading" class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div v-else class="changelog-container">
       <h1 class="header">Changelog</h1>
       <article v-for="log in changelog" :key="log.tag_name" class="changelog-entry">
         <div class="info">
@@ -20,7 +25,8 @@ export default {
   data() {
     return {
       changelog: [],
-      mdParser: null
+      mdParser: null,
+      loading: true
     }
   },
   created() {
@@ -30,6 +36,7 @@ export default {
   },
   methods: {
     async fetchData() {
+      this.loading = true;
       const res = await $fetch("/api/changelog");
       this.changelog = res.map(log => {
         const tempDescription = log.description
@@ -49,6 +56,7 @@ export default {
           description: renderedDescription
         };
       });
+      this.loading = false;
     },
     formatDate(inputDate) {
       return new Date(inputDate).toLocaleDateString('en-US', {
