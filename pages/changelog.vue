@@ -96,24 +96,8 @@ export default {
           top: .55em;
           width: 12px;
           height: 1px;
+          left: -36px;
           background-color: rgba(255, 255, 255, .5);
-        }
-      `, beforeStyle.sheet.cssRules.length);
-      });
-
-      document.querySelectorAll('.description li').forEach(element => {
-        Object.assign(element.style, {
-          listStyleType: 'none',
-          position: "relative"
-        });
-
-        const beforeStyle = document.createElement('style');
-        document.head.appendChild(beforeStyle);
-        beforeStyle.sheet.insertRule(`
-        @media (max-width: 720px) {
-          .description li::before {
-            left: -36px;
-          }
         }
       `, beforeStyle.sheet.cssRules.length);
       });

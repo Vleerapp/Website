@@ -37,7 +37,22 @@ export default {
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+    },
+    closeMenuOnOutsideClick(event) {
+      if (!this.$el.contains(event.target)) {
+        this.menuOpen = false;
+      }
     }
+  },
+  mounted() {
+    document.addEventListener('click', this.closeMenuOnOutsideClick);
+    this.$router.beforeEach((to, from, next) => {
+      this.menuOpen = false;
+      next();
+    });
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.closeMenuOnOutsideClick);
   }
 };
 </script>
