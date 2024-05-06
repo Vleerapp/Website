@@ -4,7 +4,7 @@
       <h1 class="header">Changelog</h1>
       <article v-for="log in changelog" :key="log.tag_name" class="changelog-entry">
         <div class="info">
-          <a :href="log.url" class="tag">{{ log.tag_name }}</a>
+          <a target="_blank" :href="log.url" class="tag">{{ log.tag_name }}</a>
           <p>{{ formatDate(log.date) }}</p>
         </div>
         <div class="description" v-html="log.description"></div>
@@ -39,8 +39,8 @@ export default {
 
         let renderedDescription = this.mdParser.render(tempDescription);
 
-        renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
-        renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a href="https://github.com/$1">@$1</a>');
+        renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a target="_blank" href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
+        renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a target="_blank" href="https://github.com/$1">@$1</a>');
         renderedDescription = renderedDescription.replace(/\n/g, '<br>');
         renderedDescription = renderedDescription.replace(/<p><br><\/p>/g, '<br>');
 

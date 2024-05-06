@@ -13,12 +13,13 @@
         </div>
       </div>
       <div class="links">
-        <a class="link plausible-event-name=Github" href="https://github.com/Vleerapp/">Github</a>
+        <a class="link plausible-event-name=Github" href="https://github.com/Vleerapp/" target="_blank">Github</a>
         <NuxtLink class="link" to="/changelog">
           Changelog
         </NuxtLink>
-        <a class="link plausible-event-name=Discord" href="https://discord.gg/invite/Y7SbYphVw9">Discord</a>
-        <a class="link plausible-event-name=Twitter" href="https://x.com/vleerapp">Twitter</a>
+        <a class="link plausible-event-name=Discord" href="https://discord.gg/invite/Y7SbYphVw9"
+          target="_blank">Discord</a>
+        <a class="link plausible-event-name=Twitter" href="https://x.com/vleerapp" target="_blank">Twitter</a>
       </div>
       <div class="download">
         <Download />

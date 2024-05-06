@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/sitemap": "^5.1.4",
+    "@nuxtjs/sitemap": "5.1.5",
     "@vercel/speed-insights": "^1.0.10",
     "markdown-it": "^14.1.0",
     "node-cache": "^5.1.2",
