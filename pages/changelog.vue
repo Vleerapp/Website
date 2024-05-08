@@ -9,7 +9,7 @@
       <h1 class="header">Changelog</h1>
       <article v-for="log in changelog" :key="log.tag_name" class="changelog-entry">
         <div class="info">
-          <a target="_blank" :href="log.url" class="tag">{{ log.tag_name }}</a>
+          <a target="_blank" :href="log.url" class="tag">{{ log.title }}</a>
           <p>{{ formatDate(log.date) }}</p>
         </div>
         <div class="description" v-html="log.description"></div>

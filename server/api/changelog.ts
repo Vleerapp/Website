@@ -31,6 +31,7 @@ export default defineEventHandler(async (event) => {
   try {
     const releases = await $fetch(`https://api.github.com/repos/${repo}/releases`);
     const descriptions = releases.map(release => ({
+      title: release.name,
       tag_name: release.tag_name,
       description: release.body || 'No description available',
       url: release.html_url,
