@@ -24,7 +24,7 @@
   <div class="image-section">
     <div class="container">
       <div class="text">
-        <h3 class="text-h3">Listen wihout any inerruptions.</h3>
+        <h3 class="text-h3">Listen without any inerruptions.</h3>
         <p class="text-p">One application, all you every need.</p>
       </div>
       <div class="wrapper">
