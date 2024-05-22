@@ -1,12 +1,12 @@
 <template>
-  <div @click="download()" class="button plausible-event-name=Download">
-    <svg v-if="os == 'macos'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
+  <a :href="downloadUrl" class="button plausible-event-name=Download">
+    <svg v-if="os === 'macos'" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="none"
       viewBox="0 0 16 16">
       <path fill="#2F3031"
         d="M12.665 15.358c-.905.844-1.893.711-2.843.311-1.006-.409-1.93-.427-2.991 0-1.33.551-2.03.391-2.825-.31C-.498 10.886.166 4.078 5.28 3.83c1.246.062 2.114.657 2.843.71 1.09-.213 2.133-.826 3.296-.746 1.393.107 2.446.64 3.138 1.6-2.88 1.662-2.197 5.315.443 6.337-.526 1.333-1.21 2.657-2.345 3.635zM8.03 3.778C7.892 1.794 9.563.16 11.483 0c.268 2.293-2.16 4-3.452 3.777">
       </path>
     </svg>
-    <svg v-if="os == 'windows'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
+    <svg v-if="os === 'windows'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
       xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
       <g id="Windows 11">
         <path d="M0 9L7 9L7 16L0 16L0 9Z" id="Rectangle" fill="#2F3031" fill-rule="evenodd" stroke="none"
@@ -19,8 +19,7 @@
           clip-path="url(#clip_1)" />
       </g>
     </svg>
-    <svg v-if="os == 'linux'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
-      xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <svg v-if="os === 'linux'" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
       <g id="Linux">
         <path d="M-13154 -6574L-13154 -6574L-13154 -6558L-13170 -6558L-13170 -6574L-13154 -6574Z" id="Linux" fill="none"
           stroke="none" />
@@ -30,42 +29,44 @@
       </g>
     </svg>
     Download
-  </div>
+  </a>
 </template>
 
-<script>
-import { $fetch } from 'ofetch';
+<script setup>
+import { ref } from 'vue';
+import { useRequestHeaders } from '#app';
+import { useAsyncData } from '#app';
 
-export default {
-  data() {
-    return {
-      downloadUrl: "",
-      os: ""
-    }
-  },
-  methods: {
-    async fetchDownloadUrl() {
-      const res = await $fetch("/api/latest")
-      this.downloadUrl = res.version_link;
-    },
-    download() {
-      if(this.downloadUrl != "") {
-        window.location.href = this.downloadUrl;
-      }
-    }
-  },
-  async mounted() {
-    this.os = window.navigator.userAgent.toLowerCase().includes('mac') ? 'macos' : 
-              window.navigator.userAgent.toLowerCase().includes('win') ? 'windows' : 
-              window.navigator.userAgent.toLowerCase().includes('linux') ? 'linux' : 'linux';
+const downloadUrl = ref('');
+const os = ref('linux');
+const headers = useRequestHeaders(['user-agent']);
+const userAgent = headers['user-agent'] || (typeof window !== 'undefined' ? window.navigator.userAgent : '');
 
-    await this.fetchDownloadUrl();
+const fetchData = async () => {
+  const storedData = useState('latestData', () => null);
+  if (storedData.value) {
+    downloadUrl.value = storedData.value.version_link;
+  } else {
+    console.log("test");
+    const { data } = await useAsyncData('latest', () => $fetch('/api/latest'));
+    downloadUrl.value = data.value.version_link;
+    storedData.value = data.value;
   }
 };
+
+await fetchData();
+
+if (userAgent) {
+  const ua = userAgent.toLowerCase();
+  if (ua.includes('mac')) os.value = 'macos';
+  else if (ua.includes('win')) os.value = 'windows';
+  else if (ua.includes('linux')) os.value = 'linux';
+}
 </script>
 
 <style scoped>
 .button {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   background-color: #E6E6E6;

@@ -1,38 +1,39 @@
-import { $fetch } from 'ofetch';
 import NodeCache from 'node-cache';
+import type { NitroFetchOptions } from 'nitropack';
 
 const myCache = new NodeCache();
 
 export default defineEventHandler(async (event) => {
-  const userAgent = event.req.headers['user-agent'].toLowerCase();
+  console.log("fetch");
+  const userAgent = event.req.headers['user-agent']?.toLowerCase() || '';
   const os = userAgent.includes('mac') ? 'macos' :
     userAgent.includes('win') ? 'windows' :
       userAgent.includes('linux') ? 'linux' : 'linux';
 
   const cacheKey = 'latest-release';
-  const cachedRelease = myCache.get(cacheKey);
+  const cachedRelease: any = myCache.get(cacheKey);
 
   if (cachedRelease) {
-    const etag = myCache.get(`${cacheKey}-etag`);
+    const etag: string | undefined = myCache.get(`${cacheKey}-etag`);
     try {
-      const headers = etag ? { headers: { 'If-None-Match': etag } } : {};
+      const headers: HeadersInit | undefined = etag ? { 'If-None-Match': etag } : undefined;
       const response = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases', {
-        ...headers,
-        method: 'HEAD'
-      });
+        headers,
+        method: 'head'
+      } as NitroFetchOptions);
 
       if (response.status === 304) {
         return formatReleaseData(cachedRelease, os);
       } else if (response.status === 403) {
-        return formatReleaseData(cachedRelease, os); // Return cached data if GitHub API returns 403
+        return formatReleaseData(cachedRelease, os);
       }
-    } catch (error) {
+    } catch (error: any) {
       return formatReleaseData(cachedRelease, os);
     }
   }
 
   try {
-    const releases = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
+    const releases: any[] = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases');
     if (releases.length === 0) {
       return {
         version: 'unknown',
@@ -44,28 +45,27 @@ export default defineEventHandler(async (event) => {
     const latestRelease = releases[0];
     myCache.set(cacheKey, latestRelease);
     myCache.set(`${cacheKey}-etag`, latestRelease.etag);
-
     return formatReleaseData(latestRelease, os);
-  } catch (error) {
+  } catch (error: any) {
     if (error.response?.status === 403 && cachedRelease) {
-      return formatReleaseData(cachedRelease, os); // Return cached data if GitHub API returns 403
+      return formatReleaseData(cachedRelease, os); 
     }
-    throw error; // rethrow the error if it's not a 403 or no cache is available
+    throw error;
   }
 });
 
-function formatReleaseData(release, os) {
+function formatReleaseData(release: any, os: string) {
   const extension = os === 'macos' ? '.dmg' : os === 'windows' ? '.msi' : os === 'linux' ? '.deb' : "";
-  const osSpecificAsset = release.assets.find(asset => asset.name.endsWith(extension));
+  const osSpecificAsset = release.assets.find((asset: any) => asset.name.endsWith(extension));
   const otherPlatforms = release.assets
-    .filter(asset => asset.name.endsWith('.dmg') || asset.name.endsWith('.msi') || asset.name.endsWith('.deb'))
-    .map(asset => ({
+    .filter((asset: any) => asset.name.endsWith('.dmg') || asset.name.endsWith('.msi') || asset.name.endsWith('.deb'))
+    .map((asset: any) => ({
       platform: asset.name.endsWith('.dmg') ? 'macos' :
         asset.name.endsWith('.msi') ? 'windows' :
           asset.name.endsWith('.deb') ? 'linux' : 'unknown',
       url: asset.browser_download_url
     }))
-    .filter(platform => platform.url !== osSpecificAsset?.browser_download_url);
+    .filter((platform: any) => platform.url !== osSpecificAsset?.browser_download_url);
 
   if (osSpecificAsset) {
     return {
