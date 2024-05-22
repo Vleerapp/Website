@@ -37,25 +37,31 @@ export default {
   methods: {
     async fetchData() {
       this.loading = true;
-      const res = await $fetch("/api/changelog");
-      this.changelog = res.map(log => {
-        const tempDescription = log.description
-          .replace(/https:\/\/github\.com\/Vleerapp\/Vleer\/pull\/(\d+)/g, 'PULL_REQUEST_$1')
-          .replace(/<br>/g, "\n")
-          .replace(/\) - ([a-f0-9]{64})/g, (match, p1) => `) - ${p1.substring(0, 16)}...`);
+      const cachedData = useState('changelogData', () => null);
+      if (cachedData.value) {
+        this.changelog = cachedData.value;
+      } else {
+        const res = await $fetch("/api/changelog");
+        this.changelog = res.map(log => {
+          const tempDescription = log.description
+            .replace(/https:\/\/github\.com\/Vleerapp\/Vleer\/pull\/(\d+)/g, 'PULL_REQUEST_$1')
+            .replace(/<br>/g, "\n")
+            .replace(/\) - ([a-f0-9]{64})/g, (match, p1) => `) - ${p1.substring(0, 16)}...`);
 
-        let renderedDescription = this.mdParser.render(tempDescription);
+          let renderedDescription = this.mdParser.render(tempDescription);
 
-        renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a target="_blank" href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
-        renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a target="_blank" href="https://github.com/$1">@$1</a>');
-        renderedDescription = renderedDescription.replace(/\n/g, '<br>');
-        renderedDescription = renderedDescription.replace(/<p><br><\/p>/g, '<br>');
+          renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a target="_blank" href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
+          renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a target="_blank" href="https://github.com/$1">@$1</a>');
+          renderedDescription = renderedDescription.replace(/\n/g, '<br>');
+          renderedDescription = renderedDescription.replace(/<p><br><\/p>/g, '<br>');
 
-        return {
-          ...log,
-          description: renderedDescription
-        };
-      });
+          return {
+            ...log,
+            description: renderedDescription
+          };
+        });
+        cachedData.value = this.changelog;
+      }
       this.loading = false;
     },
     formatDate(inputDate) {

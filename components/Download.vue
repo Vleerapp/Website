@@ -47,7 +47,6 @@ const fetchData = async () => {
   if (storedData.value) {
     downloadUrl.value = storedData.value.version_link;
   } else {
-    console.log("test");
     const { data } = await useAsyncData('latest', () => $fetch('/api/latest'));
     downloadUrl.value = data.value.version_link;
     storedData.value = data.value;

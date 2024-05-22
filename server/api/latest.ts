@@ -4,7 +4,6 @@ import type { NitroFetchOptions } from 'nitropack';
 const myCache = new NodeCache();
 
 export default defineEventHandler(async (event) => {
-  console.log("fetch");
   const userAgent = event.req.headers['user-agent']?.toLowerCase() || '';
   const os = userAgent.includes('mac') ? 'macos' :
     userAgent.includes('win') ? 'windows' :
