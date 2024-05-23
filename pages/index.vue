@@ -8,7 +8,7 @@
       </h2>
     </div>
     <div class="hero-img">
-      <NuxtImg src="/hero-bg.svg" />
+      <NuxtImg class="image" alt="bg" src="/hero-bg.svg" />
     </div>
     <div class="hero-download">
       <Download class="download" />
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="footer">
-    <NuxtImg alt="footer-image" src="/footer.svg" />
+    <NuxtImg class="image" alt="footer-image" src="/footer.svg" />
   </div>
 </template>
 

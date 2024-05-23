@@ -1,5 +1,4 @@
 import NodeCache from 'node-cache';
-import type { NitroFetchOptions } from 'nitropack';
 
 const myCache = new NodeCache();
 
@@ -14,7 +13,7 @@ export default defineEventHandler(async (event) => {
     const response = await $fetch(`https://api.github.com/repos/${repo}/releases`, {
       headers,
       method: 'HEAD'
-    } as NitroFetchOptions<'json'>);
+    });
 
     if ((response as Response).status === 304) {
       return cachedDescriptions;
