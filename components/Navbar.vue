@@ -3,7 +3,7 @@
     <div class="navbar" :class="{ 'menu-open': menuOpen }">
       <div class="icon-container">
         <NuxtLink to="/" class="icon">
-          <NuxtImg alt="logo" src="/logo96x.webp" />
+          <NuxtImg width="24" height="24" alt="logo" src="/logo96x.webp" />
           <p>Vleer</p>
         </NuxtLink>
         <div class="hamburger" @click="toggleMenu">
