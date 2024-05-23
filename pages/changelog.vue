@@ -18,122 +18,107 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { ref, onMounted, nextTick } from 'vue';
+import { useState } from '#app';
 import MarkdownIt from 'markdown-it';
 
-export default {
-  data() {
-    return {
-      changelog: [],
-      mdParser: null,
-      loading: true
-    }
-  },
-  created() {
-    this.mdParser = new MarkdownIt({
-      linkify: true
-    })
-  },
-  methods: {
-    async fetchData() {
-      this.loading = true;
-      const cachedData = useState('changelogData', () => null);
-      if (cachedData.value) {
-        this.changelog = cachedData.value;
-      } else {
-        const res = await $fetch("/api/changelog");
-        this.changelog = res.map(log => {
-          const tempDescription = log.description
-            .replace(/https:\/\/github\.com\/Vleerapp\/Vleer\/pull\/(\d+)/g, 'PULL_REQUEST_$1')
-            .replace(/<br>/g, "\n")
-            .replace(/\) - ([a-f0-9]{64})/g, (match, p1) => `) - ${p1.substring(0, 16)}...`);
+const loading = ref(true);
+const changelog = useState('changelog', () => []);
 
-          let renderedDescription = this.mdParser.render(tempDescription);
+if (!changelog.value.length) {
+  const mdParser = new MarkdownIt({ linkify: true });
+  const fetchChangelog = async () => {
+    const res = await $fetch('/api/changelog');
+    changelog.value = res.map(log => {
+      const tempDescription = log.description
+        .replace(/https:\/\/github\.com\/Vleerapp\/Vleer\/pull\/(\d+)/g, 'PULL_REQUEST_$1')
+        .replace(/<br>/g, "\n")
+        .replace(/\) - ([a-f0-9]{64})/g, (match, p1) => `) - ${p1.substring(0, 16)}...`);
 
-          renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a target="_blank" href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
-          renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a target="_blank" href="https://github.com/$1">@$1</a>');
-          renderedDescription = renderedDescription.replace(/\n/g, '<br>');
-          renderedDescription = renderedDescription.replace(/<p><br><\/p>/g, '<br>');
+      let renderedDescription = mdParser.render(tempDescription);
 
-          return {
-            ...log,
-            description: renderedDescription
-          };
-        });
-        cachedData.value = this.changelog;
-      }
-      this.loading = false;
-    },
-    formatDate(inputDate) {
-      return new Date(inputDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    },
-  },
-  async mounted() {
-    await this.fetchData();
-    this.$nextTick(() => {
-      document.querySelectorAll('.description h2').forEach(element => {
-        Object.assign(element.style, {
-          color: 'white',
-          textDecoration: 'none',
-          fontSize: '24px'
-        });
-      });
+      renderedDescription = renderedDescription.replace(/PULL_REQUEST_(\d+)/g, '<a target="_blank" href="https://github.com/Vleerapp/Vleer/pull/$1">#$1</a>');
+      renderedDescription = renderedDescription.replace(/@(\w+)/g, '<a target="_blank" href="https://github.com/$1">@$1</a>');
+      renderedDescription = renderedDescription.replace(/\n/g, '<br>');
+      renderedDescription = renderedDescription.replace(/<p><br><\/p>/g, '<br>');
 
-      document.querySelectorAll('.description ul').forEach(element => {
-        Object.assign(element.style, {
-          marginLeft: '42px',
-          fontSize: "20px",
-          color: "#d3d3d4",
-          display: "flex",
-          flexDirection: "column",
-          gap: "4px"
-        });
-        element.innerHTML = element.innerHTML.replace(/<br>/g, '');
-      });
+      return {
+        ...log,
+        description: renderedDescription
+      };
+    });
+  };
+  await fetchChangelog();
+}
 
-      document.querySelectorAll('.description li').forEach(element => {
-        Object.assign(element.style, {
-          listStyleType: 'none',
-          position: "relative"
-        });
+const formatDate = (inputDate: string) => {
+  return new Date(inputDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
 
-        const beforeStyle = document.createElement('style');
-        document.head.appendChild(beforeStyle);
-        beforeStyle.sheet.insertRule(`
-        .description li::before {
-          content: "";
-          position: absolute;
-          top: .55em;
-          width: 12px;
-          height: 1px;
-          left: -36px;
-          background-color: rgba(255, 255, 255, .5);
-        }
-      `, beforeStyle.sheet.cssRules.length);
-      });
-
-      document.querySelectorAll('.description p').forEach(element => {
-        Object.assign(element.style, {
-          fontSize: "20px",
-          color: "#d3d3d4"
-        });
-      });
-
-      document.querySelectorAll('.description a').forEach(element => {
-        Object.assign(element.style, {
-          color: "#4493f8"
-        });
+onMounted(() => {
+  loading.value = false;
+  nextTick(() => {
+    document.querySelectorAll('.description h2').forEach(element => {
+      Object.assign(element.style, {
+        color: 'white',
+        textDecoration: 'none',
+        fontSize: '24px'
       });
     });
-  }
-}
-</script>
 
-<script setup>
+    document.querySelectorAll('.description ul').forEach(element => {
+      Object.assign(element.style, {
+        marginLeft: '42px',
+        fontSize: "20px",
+        color: "#d3d3d4",
+        display: "flex",
+        flexDirection: "column",
+        gap: "4px"
+      });
+      element.innerHTML = element.innerHTML.replace(/<br>/g, '');
+    });
+
+    document.querySelectorAll('.description li').forEach(element => {
+      Object.assign(element.style, {
+        listStyleType: 'none',
+        position: "relative"
+      });
+
+      const beforeStyle = document.createElement('style');
+      document.head.appendChild(beforeStyle);
+      beforeStyle.sheet.insertRule(`
+      .description li::before {
+        content: "";
+        position: absolute;
+        top: .55em;
+        width: 12px;
+        height: 1px;
+        left: -36px;
+        background-color: rgba(255, 255, 255, .5);
+      }
+    `, beforeStyle.sheet.cssRules.length);
+    });
+
+    document.querySelectorAll('.description p').forEach(element => {
+      Object.assign(element.style, {
+        fontSize: "20px",
+        color: "#d3d3d4"
+      });
+    });
+
+    document.querySelectorAll('.description a').forEach(element => {
+      Object.assign(element.style, {
+        color: "#4493f8"
+      });
+    });
+  });
+});
+
 useSeoMeta({
   title: 'Vleer - Changelog',
   description: 'Explore high-quality music with Vleer a fast, simple, and reliable app, tailored to your preferences.',
