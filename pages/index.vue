@@ -107,7 +107,7 @@ function copyInstall() {
 
   if (currentOS === "macos") {
     const codeToCopy =
-      "brew tap 0PandaDEV/repo\nbrew install --cask vleer@beta";
+      "brew tap 0PandaDEV/repo\nbrew install --cask vleer";
     navigator.clipboard.writeText(codeToCopy);
   }
 }
