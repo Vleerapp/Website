@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
-  modules: ["@nuxtjs/sitemap", "nuxt-schema-org"],
+  modules: ["@nuxtjs/sitemap", "nuxt-schema-org", "@nuxt/image"],
   app: {
     head: {
       charset: "utf-8",
@@ -30,5 +30,18 @@ export default defineNuxtConfig({
       url: 'https://vleer.app',
       logo: 'https://vleer.app/logo.png'
     }
+  },
+  image: {
+    quality: 100,
+    format: ["webp"],
+    screens: {
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536
+    },
   }
 })
