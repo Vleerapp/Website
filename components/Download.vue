@@ -32,24 +32,26 @@
   </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useRequestHeaders } from '#app';
 import { useAsyncData } from '#app';
 
-const downloadUrl = ref('');
-const os = ref('linux');
+const downloadUrl = ref<string>('');
+const os = ref<string>('linux');
 const headers = useRequestHeaders(['user-agent']);
 const userAgent = headers['user-agent'] || (typeof window !== 'undefined' ? window.navigator.userAgent : '');
 
 const fetchData = async () => {
-  const storedData = useState('latestData', () => null);
+  const storedData = useState<{ version_link: string } | null>('latestData', () => null);
   if (storedData.value) {
     downloadUrl.value = storedData.value.version_link;
   } else {
-    const { data } = await useAsyncData('latest', () => $fetch('/api/latest'));
-    downloadUrl.value = data.value.version_link;
-    storedData.value = data.value;
+    const { data } = await useAsyncData<{ version_link: string }>('latest', () => $fetch('/api/latest'));
+    if (data.value) {
+      downloadUrl.value = data.value.version_link;
+      storedData.value = data.value;
+    }
   }
 };
 

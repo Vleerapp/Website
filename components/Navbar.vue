@@ -28,34 +28,43 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      menuOpen: false
+<script lang="ts">
+import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+  setup() {
+    const menuOpen = ref(false);
+    const router = useRouter();
+
+    const toggleMenu = () => {
+      menuOpen.value = !menuOpen.value;
     };
-  },
-  methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-    },
-    closeMenuOnOutsideClick(event) {
-      if (!this.$el.contains(event.target)) {
-        this.menuOpen = false;
+
+    const closeMenuOnOutsideClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest('.navbar')) {
+        menuOpen.value = false;
       }
-    }
-  },
-  mounted() {
-    document.addEventListener('click', this.closeMenuOnOutsideClick);
-    this.$router.beforeEach((to, from, next) => {
-      this.menuOpen = false;
-      next();
+    };
+
+    onMounted(() => {
+      document.addEventListener('click', closeMenuOnOutsideClick);
+      router.beforeEach((to, from, next) => {
+        menuOpen.value = false;
+        next();
+      });
     });
-  },
-  beforeDestroy() {
-    document.removeEventListener('click', this.closeMenuOnOutsideClick);
+
+    onBeforeUnmount(() => {
+      document.removeEventListener('click', closeMenuOnOutsideClick);
+    });
+
+    return {
+      menuOpen,
+      toggleMenu
+    };
   }
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -14,9 +14,9 @@ export default defineEventHandler(async (event) => {
     const response = await $fetch(`https://api.github.com/repos/${repo}/releases`, {
       headers,
       method: 'HEAD'
-    } as NitroFetchOptions);
+    } as NitroFetchOptions<'json'>);
 
-    if (response.status === 304) {
+    if ((response as Response).status === 304) {
       return cachedDescriptions;
     }
   }

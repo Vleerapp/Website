@@ -19,11 +19,11 @@ export default defineEventHandler(async (event) => {
       const response = await $fetch('https://api.github.com/repos/vleerapp/vleer/releases', {
         headers,
         method: 'head'
-      } as NitroFetchOptions);
+      } as NitroFetchOptions<'json'>);
 
-      if (response.status === 304) {
+      if ((response as Response).status === 304) {
         return formatReleaseData(cachedRelease, os);
-      } else if (response.status === 403) {
+      } else if ((response as Response).status === 403) {
         return formatReleaseData(cachedRelease, os);
       }
     } catch (error: any) {

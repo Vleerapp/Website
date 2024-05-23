@@ -24,8 +24,8 @@
   <div class="image-section">
     <div class="container">
       <div class="text">
-        <h3 class="text-h3">Listen without any inerruptions.</h3>
-        <p class="text-p">One application, all you every need.</p>
+        <h3 class="text-h3">Listen without any interruptions.</h3>
+        <p class="text-p">One application, all you ever need.</p>
       </div>
       <div class="wrapper">
         <div class="image-outer">
@@ -58,23 +58,27 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRequestHeaders } from '#app';
 import { useAsyncData } from '#app';
 
-const cache = useState('latestCache', () => null);
+interface CacheData {
+  version: string;
+}
+
+const cache = useState<CacheData | null>('latestCache', () => null);
 
 if (!cache.value) {
-  const { data } = await useAsyncData('latest', () => $fetch('/api/latest'));
+  const { data } = await useAsyncData('latest', () => $fetch<CacheData>('/api/latest'));
   cache.value = data.value;
 }
 
-const version = ref(cache.value.version);
+const version = ref<string>(cache.value?.version || '');
 
 const headers = useRequestHeaders(['user-agent']);
 const userAgent = headers['user-agent'] || (typeof window !== 'undefined' ? window.navigator.userAgent : '');
-const os = ref('');
+const os = ref<string>('');
 
 if (userAgent) {
   const ua = userAgent.toLowerCase();
@@ -89,11 +93,11 @@ if (userAgent) {
   }
 }
 
-const install = computed(() => {
-  return os.value === "macos" ? "Install with homebrew" : "";
+const install = computed<string>(() => {
+  return os.value === "macOS 10.15+" ? "Install with homebrew" : "";
 });
 
-function copyInstall() {
+function copyInstall(): void {
   if (install.value === "") return;
 
   const userAgent = window.navigator.userAgent.toLowerCase();
