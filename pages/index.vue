@@ -33,7 +33,7 @@
             <div class="image-content">
 
             </div>
-            <NuxtImg height="730" alt="image" loading="lazy" src="/image.webp" />
+            <NuxtImg class="image" height="730" alt="image" loading="lazy" src="/image.webp" />
           </div>
         </div>
       </div>
